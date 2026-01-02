@@ -1,0 +1,46 @@
+name: Deploy to AWS Elastic Beanstalk
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate deployment package
+        run: zip -r backend-deploy.zip backend/
+
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: "schemaflow-backend"
+          environment_name: "schemaflow-backend-env"
+          version_label: "backend-${{ github.sha }}"
+          region: "ap-south-1"
+          deployment_package: "backend-deploy.zip"
+          use_existing_version_if_available: true
+
+  deploy-frontend:
+    runs-on: ubuntu-latest
+    needs: deploy-backend
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate deployment package
+        run: zip -r frontend-deploy.zip frontend/
+
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: "schemaflow-frontend"
+          environment_name: "schemaflow-frontend-env"
+          version_label: "frontend-${{ github.sha }}"
+          region: "ap-south-1"
+          deployment_package: "frontend-deploy.zip"
+          use_existing_version_if_available: true

@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   compress: true,
   poweredByHeader: false,
-  output: 'export',
 };
 
 export default nextConfig;
