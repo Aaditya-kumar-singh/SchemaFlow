@@ -1,19 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { logSafe } from '@/common/lib/logger';
 
-/**
- * Idempotency Store Interface
- * Abstracts the storage mechanism for idempotency keys
- */
+// Idempotency Store Interface
 interface IdempotencyStore {
     get(key: string): Promise<string | null>;
     set(key: string, value: string, ttlSeconds: number): Promise<void>;
 }
 
-/**
- * In-Memory Idempotency Store (for development)
- * WARNING: Not suitable for production with multiple instances
- */
+// In-Memory Store (Dev only)
 class InMemoryIdempotencyStore implements IdempotencyStore {
     private store = new Map<string, { value: string; expiresAt: number }>();
 
@@ -50,10 +44,7 @@ class InMemoryIdempotencyStore implements IdempotencyStore {
     }
 }
 
-/**
- * Redis Idempotency Store (for production)
- * Adapter for ioredis
- */
+// Redis Store
 class RedisIdempotencyStore implements IdempotencyStore {
     private redis: any; // Redis client
 
@@ -79,10 +70,7 @@ class RedisIdempotencyStore implements IdempotencyStore {
     }
 }
 
-/**
- * Upstash Idempotency Store (for production)
- * Adapter for @upstash/redis
- */
+// Upstash Store
 class UpstashIdempotencyStore implements IdempotencyStore {
     private redis: any;
 
@@ -108,31 +96,12 @@ class UpstashIdempotencyStore implements IdempotencyStore {
     }
 }
 
-/**
- * Idempotency Service
- * 
- * Prevents duplicate operations on network retries by caching responses
- * based on Idempotency-Key header.
- * 
- * Usage:
- * ```typescript
- * const result = await IdempotencyService.execute(
- *     req,
- *     async () => {
- *         // Your operation here
- *         return ResponseUtil.success(data);
- *     }
- * );
- * ```
- */
+// Service to prevent duplicate operations via Idempotency-Key header
 export class IdempotencyService {
     private static store: IdempotencyStore;
     private static readonly TTL_SECONDS = 24 * 60 * 60; // 24 hours
 
-    /**
-     * Initialize the idempotency store
-     * Call this at application startup
-     */
+    // Initialize store based on client
     static initialize(redisClient?: any) {
         if (redisClient) {
             if (typeof redisClient.setex === 'function') {
@@ -153,9 +122,7 @@ export class IdempotencyService {
         }
     }
 
-    /**
-     * Execute an operation with idempotency protection
-     */
+    // Run operation with idempotency check
     static async execute(
         req: NextRequest,
         operation: () => Promise<NextResponse>
@@ -240,9 +207,7 @@ export class IdempotencyService {
         return response;
     }
 
-    /**
-     * Validate idempotency key format
-     */
+    // Check key format
     private static isValidKey(key: string): boolean {
         // Must be 8-128 characters, alphanumeric with hyphens
         return /^[a-zA-Z0-9\-]{8,128}$/.test(key);

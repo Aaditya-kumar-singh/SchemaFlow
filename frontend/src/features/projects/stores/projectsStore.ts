@@ -13,7 +13,7 @@ interface ProjectsState {
         totalPages: number;
     };
 
-    // Actions
+
     fetchProjects: (page?: number, limit?: number) => Promise<void>;
     createProject: (name: string, dbType: 'MYSQL' | 'MONGODB') => Promise<Project>;
     deleteProject: (id: string) => Promise<void>;

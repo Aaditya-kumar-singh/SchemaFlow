@@ -6,8 +6,7 @@ import { MysqlExporter } from '@/services/export/mysql.exporter';
 import { MongoExporter } from '@/services/export/mongo.exporter';
 import { DiagramContent } from '@/types/diagram';
 
-// Mock Auth until we implement NextAuth
-// Auth helper
+// Helper to extract userId from token
 const getUserId = (req: NextRequest) => {
     const authHeader = req.headers.get('authorization');
     if (!authHeader) {

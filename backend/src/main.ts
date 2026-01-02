@@ -26,8 +26,7 @@ console.log('🚀 Starting SchemaFlow Backend...');
 console.log(`📍 Environment: ${dev ? 'development' : 'production'}`);
 console.log(`📍 Port: ${port}`);
 
-// Initialize Infrastructure
-// TODO: Move these back to .env once environment loading is fixed on this machine
+// Upstash configuration
 const UPSTASH_URL = process.env.UPSTASH_REDIS_REST_URL || "https://precise-oyster-10700.upstash.io";
 const UPSTASH_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN || "ASnMAAIncDI4NDIyYmFjNTk4Y2M0MmUyOGYzZGUyNDU5OTk5NTQ1M3AyMTA3MDA";
 
@@ -70,7 +69,7 @@ if (UPSTASH_URL && UPSTASH_TOKEN) {
 }
 
 
-// Initialize Next.js app
+// Init Next.js
 console.log('⏳ Initializing Next.js...');
 const app = next({ dev, hostname, port });
 const handle = app.getRequestHandler();

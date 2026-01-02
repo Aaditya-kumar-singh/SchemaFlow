@@ -46,7 +46,7 @@ interface DiagramEditorProps {
 }
 
 export default function DiagramEditor({ initialContent, projectId, readOnly = false }: DiagramEditorProps) {
-    // Suppress React Flow warnings about missing handles (transient during detailed renders)
+    // Suppress React Flow handle warnings
     useEffect(() => {
         const originalError = console.error;
         console.error = (...args) => {
