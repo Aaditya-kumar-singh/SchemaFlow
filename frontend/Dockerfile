@@ -23,4 +23,4 @@ RUN npm run build
 
 EXPOSE 80
 
-CMD ["npm", "start", "--", "-p", "80"]
+CMD ["npm", "start", "--", "-p", "80", "--hostname", "0.0.0.0"]
