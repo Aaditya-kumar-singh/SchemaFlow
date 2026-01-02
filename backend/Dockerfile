@@ -1,60 +1,59 @@
-# Backend Dockerfile
-FROM node:18-alpine
 
+# -----------------------------------------------------------------------------
+# BACKEND DOCKERFILE (NestJS/Next.js Custom Server)
+# -----------------------------------------------------------------------------
+
+# 1. Base Image
+FROM node:20-alpine AS base
+
+# 2. Dependencies
+FROM base AS deps
 WORKDIR /app
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat
+COPY package.json package-lock.json ./
+RUN npm ci
 
-# Install dependencies
-COPY package*.json ./
-# Clean install for production
-RUN npm ci --only=production
-
-# Copy source code
+# 3. Builder
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Generate Prisma client
-RUN if [ -f "prisma/schema-postgres.prisma" ]; then npx prisma generate --schema=prisma/schema-postgres.prisma; fi
-RUN if [ -f "prisma/schema-mongo.prisma" ]; then npx prisma generate --schema=prisma/schema-mongo.prisma; fi
+# Generate Prisma Client
+RUN npx prisma generate --schema=prisma/schema.prisma || npx prisma generate
 
-# Build the application
-# Use specific build script or tsc if standard build is not defined, assuming build script exists in package.json
-# Fallback to direct execution with tsx/ts-node if no build script
-# Based on previous package.json view, we might need to adjust start command
-# But user requested `CMD ["node", "dist/index.js"]` implying a build step.
-# Let's check package.json again or assume a build script exists or create one.
-# Given previous analysis, there was no 'build' script for backend that produces dist effectively for 'start'.
-# The user's prompt suggested: CMD ["node", "dist/index.js"]
-# We will assume a build process is needed.
+# Build Next.js app (for the API routes/pages handled by Next)
+RUN npm run build
 
-# Start command
-# Adjusting to match project structure. The user provided example: CMD ["node", "dist/index.js"]
-# But actual main entry is src/main.ts. We should probably use tsx for simplicity/compatibility 
-# OR ensure we compile to JS. Let's use the USER's requested format but ensure it works.
-# If we strictly follow the user's request:
-# RUN npm run build
-# CMD ["node", "dist/index.js"]
-# We need to make sure 'npm run build' exists and outputs to dist/index.js or adjust.
+# Compile Custom Server (main.ts)
+# We use a custom tsconfig to emit the server files to dist/
+COPY tsconfig.server.json .
+RUN npx tsc --project tsconfig.server.json
 
-# Let's stick to the USER's specific Dockerfile content request for now, 
-# but we might need to fix it if 'build' script is missing.
-# Let's inspect backend package.json again to be safe.
-# It had "build": "next build" ?! Wait, that was for backend? 
-# Ah, backend package.json had "scripts": { "dev": "next dev", ... "build": "next build" }
-# Wait, is the backend a Next.js app too?
-# Yes, looking at backend/package.json in step 157: "name": "moon-modeler-backend", "scripts": "next build"
-# So it IS a Next.js app (likely API routes).
+# 4. Runner
+FROM base AS runner
+WORKDIR /app
 
-ENV NODE_ENV=production
-ENV PORT=3002
+ENV NODE_ENV production
+ENV PORT 3002
+
+# Add a non-root user
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+# Copy essential files
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+# Copy Prisma schema/migrations if needed for runtime (though client is baked in)
+# COPY --from=builder /app/prisma ./prisma
+
+USER nextjs
 
 EXPOSE 3002
 
-# User requested: CMD ["node", "dist/index.js"]
-# BUT if it is Next.js, it should be: CMD ["npm", "start"] which runs "next start"
-# The USER's provided Dockerfile example seems to assume a standard Express/Node app.
-# Since the backend IS a Next.js app (API routes), we should probably stick to `npm start`.
-# However, the user explicitly asked for "Industry-ready deployment plan... Backend Dockerfile... CMD ['node', 'dist/index.js']"
-# This might be a generic template they pasted. 
-# ADAPTING to the actual project reality (Next.js backend):
-
-RUN npm run build
-CMD ["npm", "start"]
+# We run the COMPILED custom server, which initializes Next.js and Socket.IO
+CMD ["node", "dist/main.js"]
