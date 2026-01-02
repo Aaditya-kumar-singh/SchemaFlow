@@ -51,4 +51,8 @@ export class ImportController {
             return ResponseUtil.handleError(error);
         }
     }
+
+    static async importMysql(req: NextRequest) {
+        return this.execute(req);
+    }
 }

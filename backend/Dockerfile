@@ -21,7 +21,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Generate Prisma Client
-RUN npx prisma generate --schema=prisma/schema.prisma || npx prisma generate
+RUN npm run prisma:generate
 
 # Build Next.js app (for the API routes/pages handled by Next)
 RUN npm run build
@@ -44,7 +44,6 @@ RUN adduser --system --uid 1001 nextjs
 
 # Copy essential files
 COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
