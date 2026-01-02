@@ -1,0 +1,15 @@
+name = "schemaflow"
+account_id = "$CLOUDFLARE_ACCOUNT_ID" # Replaced by CI/CD
+compatibility_date = "2025-01-01"
+
+# Backend Container
+[[container.services]]
+name = "backend"
+image = "registry.cloudflare.com/$CLOUDFLARE_ACCOUNT_ID/schemaflow-backend:latest"
+http_port = 3000
+
+# Frontend Container
+[[container.services]]
+name = "frontend"
+image = "registry.cloudflare.com/$CLOUDFLARE_ACCOUNT_ID/schemaflow-frontend:latest"
+http_port = 80
