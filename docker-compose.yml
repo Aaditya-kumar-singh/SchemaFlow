@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+      # Environment variables should be passed from EB environment properties generally,
+      # but mapping them here ensures they are passed through if defined in .env or shell.
+      # Ideally, EB sets these on the host, we might need to map them if we want to be explicit.
+      # For now, minimal config to respect build.
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
