@@ -18,7 +18,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-south-1
+          aws-region: ap-southeast-2   # MUST match AWS
 
       - name: Zip application
         run: zip -r deploy.zip . -x "*.git*"
@@ -26,8 +26,8 @@ jobs:
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21
         with:
-          application_name: schemaflow
-          environment_name: schemaflow-env
-          region: ap-south-1
+          application_name: schemaflow          # EXACT
+          environment_name: Schemaflow-env      # CASE-SENSITIVE
+          region: ap-southeast-2                # EXACT
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
