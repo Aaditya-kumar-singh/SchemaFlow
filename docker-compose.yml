@@ -9,9 +9,9 @@ services:
     environment:
       - NODE_ENV=production
 
-  frontend:
+  web:
     build: ./frontend
-    container_name: frontend
+    container_name: web
     ports:
       - "80:80"
     depends_on:
