@@ -31,5 +31,6 @@ jobs:
           region: ap-southeast-2
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
+          existing_bucket_name: schemaflow-eb-deploy-567207910627
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
