@@ -1,0 +1,80 @@
+{
+  "name": "moon-modeler-backend",
+  "version": "1.0.0",
+  "author": "Aaditya Kumar",
+  "scripts": {
+    "dev": "next dev",
+    "dev:socket": "tsx src/main.ts",
+    "dev:simple": "tsx src/server-simple.ts",
+    "build": "next build",
+    "start": "next start",
+    "prisma:generate": "npm run prisma:generate:mongo && npm run prisma:generate:postgres",
+    "prisma:generate:mongo": "prisma generate --schema=prisma/schema-mongo.prisma",
+    "prisma:generate:postgres": "prisma generate --schema=prisma/schema-postgres.prisma",
+    "prisma:push:mongo": "prisma db push --schema=prisma/schema-mongo.prisma",
+    "prisma:push:postgres": "prisma db push --schema=prisma/schema-postgres.prisma",
+    "prisma:studio:mongo": "prisma studio --schema=prisma/schema-mongo.prisma",
+    "prisma:studio:postgres": "prisma studio --schema=prisma/schema-postgres.prisma",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,json,md}\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@prisma/client": "5.10.2",
+    "@types/bcrypt": "^6.0.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/ssh2": "^1.15.5",
+    "@upstash/redis": "^1.36.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.3",
+    "ioredis": "^5.8.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.0.0",
+    "mysql2": "^3.16.0",
+    "next": "14",
+    "next-auth": "beta",
+    "react": "^18",
+    "react-dom": "^18",
+    "socket.io": "^4.8.3",
+    "ssh2": "^1.17.0",
+    "winston": "latest",
+    "winston-daily-rotate-file": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.2.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^8.50.1",
+    "@typescript-eslint/parser": "^8.50.1",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.4",
+    "prisma": "5.10.2",
+    "ts-jest": "^29.4.6",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  }
+}

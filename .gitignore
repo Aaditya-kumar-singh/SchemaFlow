@@ -1,0 +1,50 @@
+# Ignores
+node_modules
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs
+*.njsproj
+*.sln
+*.sw?
+
+# Build output
+dist
+build
+out
+.next
+
+# Testing
+coverage
+
+# Ignore documentation files in root
+BACKEND_CHECKLIST.md
+CANVAS_FEATURES_IDEAS.md
+CONNECTION_GUIDE.md
+ENHANCEMENT_PLAN.md
+FIELD_LEVEL_RELATIONSHIPS.md
+FRONTEND_DEVELOPMENT_GUIDE.md
+PHASE_1_COMPLETE.md
+SCHEMA_INBOX_FEATURE.md
+
+.cursorrules
+# Keep README.md
+!README.md
