@@ -104,10 +104,10 @@ app.prepare().then(() => {
     new SocketHandler(io);
     console.log('✅ Socket.IO ready');
 
-    server.listen(port, () => {
+    server.listen(port, '0.0.0.0', () => {
         console.log('');
         console.log('🎉 ================================');
-        console.log(`✅ Server ready on http://${hostname}:${port}`);
+        console.log(`✅ Server ready on http://0.0.0.0:${port}`);
         console.log(`✅ Socket.IO ready on /api/socket/io`);
         console.log('🎉 ================================');
         console.log('');

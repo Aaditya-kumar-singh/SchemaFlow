@@ -1,5 +1,5 @@
 name = "schemaflow"
-account_id = "$CLOUDFLARE_ACCOUNT_ID" # Replaced by CI/CD
+account_id = "c9148f4fc2e63f94451ca685cf6a19a7"
 compatibility_date = "2025-01-01"
 
 # Backend Container
