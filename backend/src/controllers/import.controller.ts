@@ -8,6 +8,9 @@ export class ImportController {
     static async execute(req: NextRequest) {
         try {
             const body = await req.json();
+            if (!body) {
+                return ResponseUtil.error('Empty request body', 400);
+            }
             const { type, connectionString } = ImportSchema.parse(body); // Throws ZodError on failure
             let content;
 

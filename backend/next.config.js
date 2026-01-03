@@ -25,6 +25,8 @@ const nextConfig = {
         // your project has type errors.
         ignoreBuildErrors: true,
     },
+    // Force specific timeout to allow more time for static generation
+    staticPageGenerationTimeout: 200,
 }
 
 module.exports = nextConfig
