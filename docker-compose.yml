@@ -3,15 +3,10 @@ services:
   # FRONTEND SERVICE
   # ---------------------------------------------------------------------------
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest
     restart: always
     environment:
       - NODE_ENV=production
-      # Point to the Nginx proxy (browser access) or Internal URL?
-      # Client-side calls go to public URL (window.location). 
-      # SSR calls might need internal reference.
       - NEXT_PUBLIC_API_URL=/api
     ports:
       - "3000:3000"
@@ -20,17 +15,12 @@ services:
   # BACKEND SERVICE
   # ---------------------------------------------------------------------------
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest
     restart: always
     environment:
       - PORT=3002
       - NODE_ENV=production
-      # Make sure to set these in your deployment environment (EB Console)
-      # - DATABASE_URL=mongodb+srv://...
-      # - NEXTAUTH_SECRET=...
-      # - NEXTAUTH_URL=...
+      # - DATABASE_URL=mongodb+srv://... (Managed by AWS Console)
     ports:
       - "3002:3002"
 
