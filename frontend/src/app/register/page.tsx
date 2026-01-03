@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
+import { Eye, EyeOff } from 'lucide-react';
 
 import { useAuthStore } from '@/features/auth/stores/authStore';
 
@@ -12,6 +13,8 @@ export default function RegisterPage() {
     const router = useRouter();
     const { register, isLoading, error } = useAuthStore();
     const [loadingState, setLoadingState] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -85,8 +88,26 @@ export default function RegisterPage() {
                             <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                                 Password
                             </label>
-                            <div className="mt-1">
-                                <Input id="password" name="password" type="password" autoComplete="new-password" required placeholder="••••••••" />
+                            <div className="mt-1 relative">
+                                <Input
+                                    id="password"
+                                    name="password"
+                                    type={showPassword ? 'text' : 'password'}
+                                    autoComplete="new-password"
+                                    required
+                                    placeholder="••••••••"
+                                />
+                                <button
+                                    type="button"
+                                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-500"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                >
+                                    {showPassword ? (
+                                        <EyeOff className="h-5 w-5" aria-hidden="true" />
+                                    ) : (
+                                        <Eye className="h-5 w-5" aria-hidden="true" />
+                                    )}
+                                </button>
                             </div>
                         </div>
 
@@ -94,8 +115,25 @@ export default function RegisterPage() {
                             <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700">
                                 Confirm Password
                             </label>
-                            <div className="mt-1">
-                                <Input id="confirm-password" name="confirm-password" type="password" required placeholder="••••••••" />
+                            <div className="mt-1 relative">
+                                <Input
+                                    id="confirm-password"
+                                    name="confirm-password"
+                                    type={showConfirmPassword ? 'text' : 'password'}
+                                    required
+                                    placeholder="••••••••"
+                                />
+                                <button
+                                    type="button"
+                                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-500"
+                                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                >
+                                    {showConfirmPassword ? (
+                                        <EyeOff className="h-5 w-5" aria-hidden="true" />
+                                    ) : (
+                                        <Eye className="h-5 w-5" aria-hidden="true" />
+                                    )}
+                                </button>
                             </div>
                         </div>
 

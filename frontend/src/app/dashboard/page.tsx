@@ -4,17 +4,19 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useProjectsStore } from '@/features/projects/stores/projectsStore';
 import { Button } from '@/components/ui/button';
-import { Plus, Database, UserPlus } from 'lucide-react';
+import { Plus, Database, UserPlus, LogOut } from 'lucide-react';
 import ProjectCard from '@/features/projects/components/ProjectCard';
 import CreateProjectDialog from '@/features/projects/components/CreateProjectDialog';
 import TeamSwitcher from '@/features/teams/components/TeamSwitcher';
 import CreateTeamDialog from '@/features/teams/components/CreateTeamDialog';
 import InviteMemberDialog from '@/features/teams/components/InviteMemberDialog';
 import { useTeamStore } from '@/features/teams/stores/teamStore';
+import { useAuthStore } from '@/features/auth/stores/authStore';
 
 export default function DashboardPage() {
     const router = useRouter();
     const { projects, pagination, fetchProjects, createProject, isLoading, error } = useProjectsStore();
+    const logout = useAuthStore(state => state.logout);
     const { currentTeam } = useTeamStore();
     const [showCreateDialog, setShowCreateDialog] = useState(false);
     const [showCreateTeamDialog, setShowCreateTeamDialog] = useState(false);
@@ -38,6 +40,11 @@ export default function DashboardPage() {
     const handleCreateTeam = async (name: string) => {
         const { createTeam } = useTeamStore.getState();
         await createTeam(name);
+    };
+
+    const handleLogout = async () => {
+        await logout();
+        router.push('/login');
     };
 
     return (
@@ -79,6 +86,9 @@ export default function DashboardPage() {
                             <Button onClick={() => setShowCreateDialog(true)} size="lg" className="shadow-lg bg-blue-600 hover:bg-blue-700 text-white w-full md:w-auto">
                                 <Plus className="w-5 h-5 mr-2" />
                                 New Project
+                            </Button>
+                            <Button variant="ghost" size="lg" onClick={handleLogout} className="text-slate-500 hover:text-slate-700">
+                                <LogOut className="w-5 h-5" />
                             </Button>
                         </div>
                     </div>
