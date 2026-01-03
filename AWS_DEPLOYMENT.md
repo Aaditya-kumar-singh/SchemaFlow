@@ -52,3 +52,12 @@ The deployment upload includes:
 - `nginx/`: Configuration for routing traffic.
 
 **Note:** The build happens **on the AWS instance**. This might take a few minutes. If deployment fails due to timeout, consider increasing the timeout in EB Configuration.
+
+## 🛠️ Troubleshooting
+
+- **Instance deployment failed to download the Docker image**:
+    - This means AWS cannot access your Docker images on GitHub Container Registry (GHCR).
+    - **FIX**: Go to your GitHub Profile -> Packages -> Click `schemaflow-backend` -> Package Settings -> Change visibility -> **Public**.
+    - Repeat for `schemaflow-frontend`.
+    - Then re-run the deployment.
+
