@@ -1,7 +1,8 @@
 // PostgreSQL Schema - Projects & Schemas
 generator client {
-  provider = "prisma-client-js"
-  output   = "../node_modules/@prisma/client-postgres"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+  output        = "../node_modules/@prisma/client-postgres"
 }
 
 datasource db {
