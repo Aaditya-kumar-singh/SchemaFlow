@@ -10,6 +10,8 @@ services:
       - NEXT_PUBLIC_API_URL=/api
       # Optimize for t3.micro (1GB RAM total)
       - NODE_OPTIONS=--max-old-space-size=350
+      # Socket.IO should connect to the current domain (same as browser)
+      - NEXT_PUBLIC_SOCKET_URL=
     ports:
       - "3000:3000"
 
