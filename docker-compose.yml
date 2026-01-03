@@ -26,7 +26,12 @@ services:
       - NODE_ENV=production
       # Optimize for t3.micro (1GB RAM total)
       - NODE_OPTIONS=--max-old-space-size=450
-      # - DATABASE_URL=mongodb+srv://... (Managed by AWS Console)
+      # Pass environment variables from Elastic Beanstalk host
+      - DATABASE_URL=${DATABASE_URL}
+      - POSTGRES_URL=${POSTGRES_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - UPSTASH_REDIS_REST_URL=${UPSTASH_REDIS_REST_URL}
+      - UPSTASH_REDIS_REST_TOKEN=${UPSTASH_REDIS_REST_TOKEN}
     ports:
       - "3002:3002"
 
