@@ -3,7 +3,9 @@ services:
   # FRONTEND SERVICE
   # ---------------------------------------------------------------------------
   frontend:
-    image: ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     restart: always
     environment:
       - NODE_ENV=production
@@ -15,7 +17,9 @@ services:
   # BACKEND SERVICE
   # ---------------------------------------------------------------------------
   backend:
-    image: ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     restart: always
     environment:
       - PORT=3002
