@@ -60,7 +60,7 @@ export default function LoginPage() {
                                 Email address
                             </label>
                             <div className="mt-1">
-                                <Input id="email" name="email" type="email" autoComplete="email" required placeholder="you@example.com" />
+                                <Input id="email" name="email" type="email" autoComplete="email" required placeholder="you@example.com" className="text-gray-900" />
                             </div>
                         </div>
 
@@ -76,6 +76,7 @@ export default function LoginPage() {
                                     autoComplete="current-password"
                                     required
                                     placeholder="••••••••"
+                                    className="pr-10 text-gray-900"
                                 />
                                 <button
                                     type="button"
