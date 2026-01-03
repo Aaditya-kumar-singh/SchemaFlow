@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { DatabaseType } from '@prisma/client';
+
 
 // --- Primitive Validators ---
 // --- Primitive Validators ---
@@ -106,7 +106,7 @@ export const DiagramSchema = z.object({
 
 export const CreateProjectSchema = z.object({
     name: z.string().min(1, 'Name is required').max(100, 'Name too long'),
-    type: z.nativeEnum(DatabaseType),
+    type: z.enum(['MYSQL', 'MONGODB']),
     teamId: z.string().optional(),
 });
 
