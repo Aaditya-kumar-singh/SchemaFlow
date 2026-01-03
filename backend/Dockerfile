@@ -35,6 +35,9 @@ RUN npx tsc --project tsconfig.server.json
 FROM base AS runner
 WORKDIR /app
 
+# Install OpenSSL (required for Prisma)
+RUN apk add --no-cache openssl
+
 ENV NODE_ENV production
 ENV PORT 3002
 
