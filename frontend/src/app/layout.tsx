@@ -19,6 +19,8 @@ export const metadata: Metadata = {
 
 import { Toaster } from 'sonner';
 import MobileWarning from "@/components/MobileWarning";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { FeedbackWidget } from "@/components/FeedbackWidget";
 
 export default function RootLayout({
   children,
@@ -31,9 +33,17 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        <MobileWarning />
-        {children}
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <MobileWarning />
+          {children}
+          <FeedbackWidget />
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

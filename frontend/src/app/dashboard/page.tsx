@@ -4,19 +4,20 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useProjectsStore } from '@/features/projects/stores/projectsStore';
 import { Button } from '@/components/ui/button';
-import { Plus, Database, UserPlus, LogOut } from 'lucide-react';
+import { Plus, Database, UserPlus } from 'lucide-react';
 import ProjectCard from '@/features/projects/components/ProjectCard';
 import CreateProjectDialog from '@/features/projects/components/CreateProjectDialog';
 import TeamSwitcher from '@/features/teams/components/TeamSwitcher';
 import CreateTeamDialog from '@/features/teams/components/CreateTeamDialog';
 import InviteMemberDialog from '@/features/teams/components/InviteMemberDialog';
 import { useTeamStore } from '@/features/teams/stores/teamStore';
-import { useAuthStore } from '@/features/auth/stores/authStore';
+import { UserNav } from '@/components/UserNav';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export default function DashboardPage() {
     const router = useRouter();
     const { projects, pagination, fetchProjects, createProject, isLoading, error } = useProjectsStore();
-    const logout = useAuthStore(state => state.logout);
     const { currentTeam } = useTeamStore();
     const [showCreateDialog, setShowCreateDialog] = useState(false);
     const [showCreateTeamDialog, setShowCreateTeamDialog] = useState(false);
@@ -42,10 +43,7 @@ export default function DashboardPage() {
         await createTeam(name);
     };
 
-    const handleLogout = async () => {
-        await logout();
-        router.push('/login');
-    };
+
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -58,8 +56,8 @@ export default function DashboardPage() {
                             <div className="flex items-center gap-3">
                                 <img src="/logo.png" alt="SchemaFlow" className="w-10 h-10 rounded-xl shadow-sm" />
                                 <div>
-                                    <h1 className="text-2xl font-bold text-gray-900 tracking-tight">SchemaFlow</h1>
-                                    <p className="text-slate-500 text-sm">Visual Database Design</p>
+                                    <h1 className="text-2xl font-bold text-gray-900 tracking-tight dark:text-white">SchemaFlow</h1>
+                                    <Breadcrumbs items={[{ label: 'Dashboard' }]} className="hidden md:flex" />
                                 </div>
                             </div>
 
@@ -77,19 +75,18 @@ export default function DashboardPage() {
                             </div>
                         </div>
 
-                        <div className="flex gap-3 w-full md:w-auto">
+                        <div className="flex gap-3 w-full md:w-auto items-center">
                             {/* Temporarily disabled
                              <Button onClick={() => router.push('/pricing')} variant="outline" className="text-yellow-600 border-yellow-200 bg-yellow-50 hover:bg-yellow-100">
                                 Upgrade to Pro
                              </Button>
                              */}
+                            <ThemeToggle />
                             <Button onClick={() => setShowCreateDialog(true)} size="lg" className="shadow-lg bg-blue-600 hover:bg-blue-700 text-white w-full md:w-auto">
                                 <Plus className="w-5 h-5 mr-2" />
                                 New Project
                             </Button>
-                            <Button variant="ghost" size="lg" onClick={handleLogout} className="text-slate-500 hover:text-slate-700">
-                                <LogOut className="w-5 h-5" />
-                            </Button>
+                            <UserNav />
                         </div>
                     </div>
                 </div>

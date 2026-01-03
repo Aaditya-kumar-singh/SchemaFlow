@@ -7,7 +7,7 @@ import { projectsApi, Project } from '@/features/projects/api/projectsApi';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { useCanvasStore } from '@/features/editor/stores/canvasStore';
-import { Loader2, Download, Database, Code, Search, Users } from 'lucide-react';
+import { Loader2, Download, Database, Code, Search, Users, Home } from 'lucide-react';
 import MobileMenu from '@/features/editor/components/MobileMenu';
 import { useTeamStore } from '@/features/teams/stores/teamStore';
 import { cn } from '@/lib/utils/cn';
@@ -186,17 +186,18 @@ export default function EditorPage() {
             {/* Toolbar Header */}
             <div className={cn("h-14 border-b flex items-center px-4 justify-between transition-colors duration-300", styles.toolbar)}>
                 <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="sm" onClick={() => router.push('/dashboard')} className={styles.text}>
-                        <ArrowLeft className={cn("w-4 h-4 mr-2", styles.icon)} />
-                        Back
-                    </Button>
                     <div className="flex items-center gap-3">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src="/logo.png" alt="Logo" className="w-8 h-8 rounded-md" />
-                        <div>
-                            <h1 className={cn("font-semibold transition-colors", styles.text)}>{project?.name}</h1>
-                            <span className={cn("text-xs uppercase transition-colors", styles.subText)}>{project?.type}</span>
+                        <Button variant="ghost" size="sm" onClick={() => router.push('/dashboard')} className={styles.text}>
+                            <Home className={cn("w-4 h-4", styles.icon)} />
+                        </Button>
+                        <span className={styles.subText}>/</span>
+                        <div className="flex items-center gap-2">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src="/logo.png" alt="Logo" className="w-5 h-5 rounded-md" />
+                            <span className={cn("font-medium transition-colors", styles.text)}>{project?.name}</span>
                         </div>
+                        <span className={styles.subText}>/</span>
+                        <span className={cn("font-semibold text-sm uppercase", styles.subText)}>Editor</span>
                     </div>
                 </div>
                 {/* Desktop Toolbar (Hidden on Mobile/Tablet) */}
