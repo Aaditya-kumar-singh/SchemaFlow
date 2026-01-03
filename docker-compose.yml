@@ -3,13 +3,13 @@ services:
   # FRONTEND SERVICE
   # ---------------------------------------------------------------------------
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest
     restart: always
     environment:
       - NODE_ENV=production
       - NEXT_PUBLIC_API_URL=/api
+      # Optimize for t3.micro (1GB RAM total)
+      - NODE_OPTIONS=--max-old-space-size=350
     ports:
       - "3000:3000"
 
@@ -17,13 +17,13 @@ services:
   # BACKEND SERVICE
   # ---------------------------------------------------------------------------
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest
     restart: always
     environment:
       - PORT=3002
       - NODE_ENV=production
+      # Optimize for t3.micro (1GB RAM total)
+      - NODE_OPTIONS=--max-old-space-size=350
       # - DATABASE_URL=mongodb+srv://... (Managed by AWS Console)
     ports:
       - "3002:3002"

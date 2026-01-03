@@ -56,9 +56,9 @@ The deployment upload includes:
 
 ## 🛠️ Troubleshooting
 
-- **Instance deployment failed to download the Docker image**:
-    - This means AWS cannot access your Docker images on GitHub Container Registry (GHCR).
-    - **FIX**: Go to your GitHub Profile -> Packages -> Click `schemaflow-backend` -> Package Settings -> Change visibility -> **Public**.
-    - Repeat for `schemaflow-frontend`.
-    - Then re-run the deployment.
+- **Memory / 502 Bad Gateway**:
+    - **t3.micro (1GB RAM)**: We have optimized the setup for micro instances by:
+      1. Using pre-built images (GHCR) to avoid building on the server.
+      2. Setting `NODE_OPTIONS=--max-old-space-size=350` to prevent Node.js from using too much RAM.
+    - If it still crashes, check `eb logs` for "Out of Memory" errors.
 
