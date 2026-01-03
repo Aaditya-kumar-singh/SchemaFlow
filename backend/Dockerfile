@@ -50,6 +50,9 @@ COPY --from=builder /app/node_modules ./node_modules
 # Copy Prisma schema/migrations if needed for runtime (though client is baked in)
 # COPY --from=builder /app/prisma ./prisma
 
+# Ensure logs directory exists and is writable
+RUN mkdir logs && chown nextjs:nodejs logs
+
 USER nextjs
 
 EXPOSE 3002
