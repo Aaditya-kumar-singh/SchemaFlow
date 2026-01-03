@@ -12,7 +12,6 @@ import { useAuthStore } from '@/features/auth/stores/authStore';
 export default function LoginPage() {
     const router = useRouter();
     const { login, isLoading, error } = useAuthStore();
-    const { login, isLoading, error } = useAuthStore();
     const [loadingState, setLoadingState] = useState(false); // Local loading state for UI feedback if store doesn't update fast enough
     const [showPassword, setShowPassword] = useState(false);
 
