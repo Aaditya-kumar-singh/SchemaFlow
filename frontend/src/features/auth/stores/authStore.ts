@@ -38,8 +38,23 @@ export const useAuthStore = create<AuthState>()(
                         localStorage.setItem('token', response.token);
                     }
                 } catch (error: any) {
+                    console.error('❌ Login Failed');
+                    console.error('Full error:', error);
+                    let errorMessage = 'Login failed';
+
+                    if (error.response?.data) {
+                        const data = error.response.data;
+                        if (data.error) {
+                            errorMessage = typeof data.error === 'string' ? data.error : JSON.stringify(data.error);
+                        } else if (data.message) {
+                            errorMessage = data.message;
+                        }
+                    } else if (error.message) {
+                        errorMessage = error.message;
+                    }
+
                     set({
-                        error: error.response?.data?.error || 'Login failed',
+                        error: errorMessage,
                         isLoading: false
                     });
                     throw error;
