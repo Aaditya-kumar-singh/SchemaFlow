@@ -21,7 +21,7 @@ jobs:
           aws-region: ap-southeast-2   # MUST match AWS
 
       - name: Zip application
-        run: zip -r deploy.zip . -x "*.git*"
+        run: zip -r deploy.zip . -x "*.git*" "*node_modules*" "*.next*" "*.dist*"
 
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21
