@@ -24,12 +24,12 @@ export default function TeamSwitcher({ onCreateTeam }: { onCreateTeam: () => voi
     return (
         <DropdownMenu open={open} onOpenChange={setOpen}>
             <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="w-[200px] justify-between shadow-sm border-slate-200">
+                <Button variant="outline" className="w-[200px] justify-between shadow-sm border-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800">
                     <div className="flex items-center gap-2 truncate">
                         {currentTeam ? (
-                            <Briefcase className="w-4 h-4 text-blue-600" />
+                            <Briefcase className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                         ) : (
-                            <UserCircle className="w-4 h-4 text-slate-500" />
+                            <UserCircle className="w-4 h-4 text-slate-500 dark:text-slate-400" />
                         )}
                         <span className="truncate">{currentTeam?.name || 'Personal Workspace'}</span>
                     </div>
