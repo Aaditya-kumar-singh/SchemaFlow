@@ -1,6 +1,6 @@
 import { Server, Socket } from 'socket.io';
-import { logSafe } from '../../common/lib/logger';
-import { DiagramEvent } from '../../types/events';
+import { logSafe } from '../common/lib/logger';
+import { DiagramEvent } from '../types/events';
 
 // Define helper type for runtime extensions if needed
 type DiagramEventPayload = DiagramEvent & {
