@@ -1,5 +1,5 @@
 
-import { logSafe } from '@/common/lib/logger';
+import { logSafe } from '../lib/logger';
 
 /**
  * Cache Interface

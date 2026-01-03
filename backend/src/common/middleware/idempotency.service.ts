@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { logSafe } from '@/common/lib/logger';
+import { logSafe } from '../lib/logger';
 
 // Idempotency Store Interface
 interface IdempotencyStore {
