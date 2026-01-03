@@ -16,19 +16,18 @@ services:
       - "3000:3000"
 
   # ---------------------------------------------------------------------------
-  # BACKEND SERVICE
-  # ---------------------------------------------------------------------------
-  backend:
-    image: ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest
-    restart: always
-    environment:
-      - PORT=3002
-      - NODE_ENV=production
-      # Optimize for t3.micro (1GB RAM total)
-      - NODE_OPTIONS=--max-old-space-size=450
-      # - DATABASE_URL=mongodb+srv://... (Managed by AWS Console)
-    ports:
-      - "3002:3002"
+  # BACKEND SERVICE (Temporarily disabled to fix deployment loop)
+  # backend:
+  #   image: ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest
+  #   restart: always
+  #   environment:
+  #     - PORT=3002
+  #     - NODE_ENV=production
+  #     # Optimize for t3.micro (1GB RAM total)
+  #     - NODE_OPTIONS=--max-old-space-size=450
+  #     # - DATABASE_URL=mongodb+srv://... (Managed by AWS Console)
+  #   ports:
+  #     - "3002:3002"
 
   # ---------------------------------------------------------------------------
   # NGINX REVERSE PROXY
