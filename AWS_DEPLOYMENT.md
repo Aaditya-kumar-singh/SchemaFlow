@@ -8,6 +8,7 @@ This guide is tailored for your existing AWS Elastic Beanstalk environment **`Sc
 - **Application Name**: `schemaflow`
 - **Environment Name**: `Schemaflow-env`
 - **Platform**: Docker running on 64bit Amazon Linux 2023
+- **Proxy Server**: **None** (Important! Go to Configuration -> instance traffic and scaling / software -> Proxy server: Set to 'None' because we use our own Nginx container)
 - **Account ID**: `5672-0791-0627`
 
 ## 🚀 Deployment Workflow
