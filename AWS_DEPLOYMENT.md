@@ -62,3 +62,21 @@ The deployment upload includes:
       2. Setting `NODE_OPTIONS=--max-old-space-size=350` to prevent Node.js from using too much RAM.
     - If it still crashes, check `eb logs` for "Out of Memory" errors.
 
+## 📜 How to Check Logs
+If your application shows **502 Bad Gateway** or fails to deploy, you need logs to see why.
+
+### Method 1: AWS Console (Easy)
+1. Go to your Environment Dashboard (Schemaflow-env).
+2. Click **Logs** on the left sidebar.
+3. Click **Request Logs** -> **Last 100 lines**.
+4. Wait a moment, then click **Download**.
+5. Look for:
+   - `eb-engine.log`: Deployment errors.
+   - `docker-compose.log` (or `stdouterr.log`): Your actual app logs.
+
+### Method 2: EB CLI (Fast)
+If you have the CLI installed:
+```bash
+eb logs
+```
+

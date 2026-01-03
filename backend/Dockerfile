@@ -54,5 +54,5 @@ USER nextjs
 
 EXPOSE 3002
 
-# We run the COMPILED custom server, which initializes Next.js and Socket.IO
-CMD ["node", "dist/main.js"]
+# We run the COMPILED custom server. Try both paths to be safe.
+CMD ["sh", "-c", "if [ -f dist/main.js ]; then node dist/main.js; else node dist/src/main.js; fi"]
