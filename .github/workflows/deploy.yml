@@ -66,7 +66,7 @@ jobs:
         uses: einaregilsson/beanstalk-deploy@v21
         with:
           application_name: schemaflow
-          environment_name: Schemaflow-env
+          environment_name: Schemaflow-env-1
           region: ap-southeast-2
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
