@@ -79,6 +79,27 @@ app.prepare().then(() => {
     console.log('⏳ Creating HTTP server...');
 
     const server = createServer(async (req, res) => {
+        // CORS Configuration
+        const origin = req.headers.origin;
+        // Allow all origins for now to facilitate migration/dev, or restrict to specific domains
+        // const allowedOrigins = ['https://your-app.pages.dev', 'http://localhost:3000'];
+        if (origin) {
+            res.setHeader('Access-Control-Allow-Origin', origin);
+        } else {
+            // Fallback for non-browser or same-origin (optional)
+            // res.setHeader('Access-Control-Allow-Origin', '*');
+        }
+
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+        res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,authorization');
+        res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+        if (req.method === 'OPTIONS') {
+            res.statusCode = 200;
+            res.end();
+            return;
+        }
+
         try {
             const parsedUrl = parse(req.url!, true);
             await handle(req, res, parsedUrl);
@@ -95,8 +116,12 @@ app.prepare().then(() => {
         path: '/api/socket/io',
         addTrailingSlash: false,
         cors: {
-            origin: '*', // Allow all in dev. Restrict in prod
-            methods: ["GET", "POST"]
+            origin: (requestOrigin, callback) => {
+                // Allow all origins (returning true to callback)
+                callback(null, true);
+            },
+            methods: ["GET", "POST"],
+            credentials: true
         }
     });
 
