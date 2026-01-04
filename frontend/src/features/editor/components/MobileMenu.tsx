@@ -25,10 +25,58 @@ export default function MobileMenu({
     onSave,
     saving,
     readOnly,
-    styles
+    styles: _propStyles // Ignore prop styles in favor of specific drawer styles
 }: MobileMenuProps) {
     const [open, setOpen] = useState(false);
     const { metadata, setTheme, setEdgeStyle, setSearchTerm } = useCanvasStore();
+
+    const getDrawerStyles = () => {
+        const theme = metadata?.theme || 'default';
+        switch (theme) {
+            case 'dark':
+                return {
+                    container: 'bg-slate-900 border-l border-slate-700',
+                    text: 'text-slate-100',
+                    subText: 'text-slate-400',
+                    input: 'bg-slate-800 border-slate-700 text-slate-200 focus:ring-blue-500',
+                    button: 'hover:bg-slate-800 text-slate-300 hover:text-white',
+                    icon: 'text-slate-400',
+                    divider: 'bg-slate-800'
+                };
+            case 'ocean':
+                return {
+                    container: 'bg-white border-l border-cyan-100',
+                    text: 'text-cyan-900',
+                    subText: 'text-cyan-600',
+                    input: 'bg-cyan-50 border-cyan-200 text-cyan-900 focus:ring-cyan-500',
+                    button: 'hover:bg-cyan-50 text-cyan-700 hover:text-cyan-900',
+                    icon: 'text-cyan-400',
+                    divider: 'bg-cyan-100'
+                };
+            case 'sunset':
+                return {
+                    container: 'bg-white border-l border-orange-100',
+                    text: 'text-orange-900',
+                    subText: 'text-orange-600',
+                    input: 'bg-orange-50 border-orange-200 text-orange-900 focus:ring-orange-500',
+                    button: 'hover:bg-orange-50 text-orange-700 hover:text-orange-900',
+                    icon: 'text-orange-400',
+                    divider: 'bg-orange-100'
+                };
+            default:
+                return {
+                    container: 'bg-white border-l border-gray-200',
+                    text: 'text-gray-900',
+                    subText: 'text-gray-500',
+                    input: 'bg-gray-50 border-gray-200 text-gray-900 focus:ring-blue-500',
+                    button: 'hover:bg-gray-100 text-gray-700 hover:text-gray-900',
+                    icon: 'text-gray-400',
+                    divider: 'bg-gray-100'
+                };
+        }
+    };
+
+    const styles = getDrawerStyles();
 
     return (
         <div className="lg:hidden">
@@ -83,39 +131,39 @@ export default function MobileMenu({
                             value={metadata?.theme || 'default'}
                             onChange={(e) => setTheme(e.target.value)}
                         >
-                            <option value="default">Default Theme</option>
-                            <option value="ocean">Ocean Theme</option>
-                            <option value="sunset">Sunset Theme</option>
-                            <option value="dark">Dark Theme</option>
+                            <option value="default" className="text-black">Default Theme</option>
+                            <option value="ocean" className="text-black">Ocean Theme</option>
+                            <option value="sunset" className="text-black">Sunset Theme</option>
+                            <option value="dark" className="text-black">Dark Theme</option>
                         </select>
                         <select
                             className={cn("w-full text-sm border rounded-md px-3 py-2 focus:outline-none focus:ring-2 bg-transparent", styles.input)}
                             value={metadata?.edgeStyle || 'step'}
                             onChange={(e) => setEdgeStyle(e.target.value)}
                         >
-                            <option value="step">Step Lines</option>
-                            <option value="bezier">Bezier Curves</option>
-                            <option value="straight">Straight Lines</option>
+                            <option value="step" className="text-black">Step Lines</option>
+                            <option value="bezier" className="text-black">Bezier Curves</option>
+                            <option value="straight" className="text-black">Straight Lines</option>
                         </select>
                     </div>
 
-                    <div className="h-px bg-gray-100 my-2" />
+                    <div className={cn("h-px my-2", styles.divider)} />
 
                     {/* Actions */}
                     <div className="space-y-2">
-                        <Button variant="outline" className="w-full justify-start" onClick={() => { onCode(); setOpen(false); }}>
+                        <Button variant="ghost" className={cn("w-full justify-start", styles.button)} onClick={() => { onCode(); setOpen(false); }}>
                             <Code className="w-4 h-4 mr-2" />
                             View Code
                         </Button>
-                        <Button variant="outline" className="w-full justify-start" onClick={() => { onImport(); setOpen(false); }}>
+                        <Button variant="ghost" className={cn("w-full justify-start", styles.button)} onClick={() => { onImport(); setOpen(false); }}>
                             <Database className="w-4 h-4 mr-2" />
                             Import SQL/JSON
                         </Button>
-                        <Button variant="outline" className="w-full justify-start" onClick={() => { onExport(); setOpen(false); }}>
+                        <Button variant="ghost" className={cn("w-full justify-start", styles.button)} onClick={() => { onExport(); setOpen(false); }}>
                             <Download className="w-4 h-4 mr-2" />
                             Export Diagram
                         </Button>
-                        <Button variant="outline" className="w-full justify-start" onClick={() => { onShare(); setOpen(false); }}>
+                        <Button variant="ghost" className={cn("w-full justify-start", styles.button)} onClick={() => { onShare(); setOpen(false); }}>
                             <Users className="w-4 h-4 mr-2" />
                             Share Project
                         </Button>
@@ -123,7 +171,7 @@ export default function MobileMenu({
                 </div>
 
                 {/* Footer Action */}
-                <div className="pt-6 mt-auto border-t">
+                <div className={cn("pt-6 mt-auto border-t", styles.divider)}>
                     <Button
                         className="w-full"
                         size="lg"

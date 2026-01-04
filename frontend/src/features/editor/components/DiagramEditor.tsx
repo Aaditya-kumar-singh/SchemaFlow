@@ -293,6 +293,36 @@ export default function DiagramEditor({ initialContent, projectId, readOnly = fa
         }
     };
 
+    const getButtonStyle = () => {
+        const theme = metadata?.theme || 'default';
+        switch (theme) {
+            case 'dark': return 'bg-slate-800 text-slate-100 border-slate-700 hover:bg-slate-700 hover:text-white';
+            case 'ocean': return 'bg-white text-cyan-900 border-cyan-200 hover:bg-cyan-50 hover:text-cyan-900';
+            case 'sunset': return 'bg-white text-orange-900 border-orange-200 hover:bg-orange-50 hover:text-orange-900';
+            default: return 'bg-white text-gray-900 border-gray-200 hover:bg-gray-50 hover:text-gray-900';
+        }
+    };
+
+    const getDropdownStyle = () => {
+        const theme = metadata?.theme || 'default';
+        switch (theme) {
+            case 'dark': return 'bg-slate-800 border-slate-700 text-slate-100';
+            case 'ocean': return 'bg-white border-cyan-200 text-cyan-900';
+            case 'sunset': return 'bg-white border-orange-200 text-orange-900';
+            default: return 'bg-white border-gray-200 text-gray-900';
+        }
+    };
+
+    const getItemHoverStyle = () => {
+        const theme = metadata?.theme || 'default';
+        switch (theme) {
+            case 'dark': return 'focus:bg-slate-700 focus:text-slate-100';
+            case 'ocean': return 'focus:bg-cyan-50 focus:text-cyan-900';
+            case 'sunset': return 'focus:bg-orange-50 focus:text-orange-900';
+            default: return 'focus:bg-gray-100 focus:text-gray-900';
+        }
+    };
+
     const { guides, onNodeDrag, onNodeDragStop } = useSmartGuides();
 
     return (
@@ -348,28 +378,28 @@ export default function DiagramEditor({ initialContent, projectId, readOnly = fa
             <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <Button variant="outline" className="shadow-lg bg-white/90 backdrop-blur border-white/20 hover:bg-white">
+                        <Button variant="outline" className={cn("shadow-lg backdrop-blur", getButtonStyle())}>
                             <Menu className="w-4 h-4 mr-2" />
                             Actions
                         </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="w-56 ml-2 mt-1 bg-white/95 backdrop-blur-xl border-slate-100 shadow-xl">
+                    <DropdownMenuContent align="start" className={cn("w-56 ml-2 mt-1 backdrop-blur-xl shadow-xl", getDropdownStyle())}>
                         <DropdownMenuLabel>Canvas Actions</DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem onClick={addTable} className="cursor-pointer">
+                        <DropdownMenuSeparator className={metadata?.theme === 'dark' ? "bg-slate-700" : ""} />
+                        <DropdownMenuItem onClick={addTable} className={cn("cursor-pointer", getItemHoverStyle())}>
                             <Plus className="w-4 h-4 mr-2 text-blue-500" />
                             {isMongo ? 'Add Collection' : 'Add Table'}
                         </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => setSchemaInboxOpen(true)} className="cursor-pointer">
+                        <DropdownMenuItem onClick={() => setSchemaInboxOpen(true)} className={cn("cursor-pointer", getItemHoverStyle())}>
                             <FileInput className="w-4 h-4 mr-2 text-purple-500" />
                             Import Schema
                         </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => setImportDialogOpen(true)} className="cursor-pointer">
+                        <DropdownMenuItem onClick={() => setImportDialogOpen(true)} className={cn("cursor-pointer", getItemHoverStyle())}>
                             <Database className="w-4 h-4 mr-2 text-green-500" />
                             Connect DB
                         </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem onClick={() => setHistoryOpen(true)} className="cursor-pointer">
+                        <DropdownMenuSeparator className={metadata?.theme === 'dark' ? "bg-slate-700" : ""} />
+                        <DropdownMenuItem onClick={() => setHistoryOpen(true)} className={cn("cursor-pointer", getItemHoverStyle())}>
                             <History className="w-4 h-4 mr-2 text-orange-500" />
                             History
                         </DropdownMenuItem>
