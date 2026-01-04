@@ -3,6 +3,6 @@ import EditorClient from './EditorClient';
 
 export const runtime = 'edge';
 
-export default function EditorPage() {
+export default function Page() {
     return <EditorClient />;
 }
