@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   compress: true,
   poweredByHeader: false,
-  output: 'standalone',
+  output: process.env.CF_PAGES ? undefined : 'standalone',
 };
 
 export default nextConfig;
