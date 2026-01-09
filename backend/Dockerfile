@@ -70,11 +70,12 @@ COPY --from=builder /app/node_modules ./node_modules
 # Copy Prisma schema for reference (optional but good for debugging)
 COPY --from=builder /app/prisma ./prisma
 
-# Ensure logs directory exists and is writable
-RUN mkdir logs && chown nextjs:nodejs logs
-# IMPORTANT: Next.js writes to .next/cache at runtime
-# We must ensure the non-root user has write permissions to the entire .next folder
-RUN chown -R nextjs:nodejs .next
+# Ensure logs directory exists
+RUN mkdir logs
+
+# VALIDATION FIX: Recursively change ownership of the entire app directory
+# This fixes all "EACCES" errors for tsconfig.json, next-env.d.ts, .next/cache, etc.
+RUN chown -R nextjs:nodejs /app
 
 USER nextjs
 
