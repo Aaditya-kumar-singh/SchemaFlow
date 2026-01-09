@@ -61,6 +61,8 @@ COPY --from=builder /app/next.config.* ./
 # Copy .next directory and ensure it is writable by the nextjs user
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder /app/dist ./dist
+# Copy src folder so Next.js can resolve 'pages' or 'app' dir checks
+COPY --from=builder /app/src ./src
 COPY --from=builder /app/node_modules ./node_modules
 
 # Copy Prisma schema for reference (optional but good for debugging)
