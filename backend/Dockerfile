@@ -35,8 +35,12 @@ RUN npx tsc --project tsconfig.server.json
 FROM base AS runner
 WORKDIR /app
 
-# Install OpenSSL (required for Prisma) and compat libraries for Alpine
-RUN apk add --no-cache openssl libssl1.1 || apk add --no-cache openssl compat-openssl1.1
+# Install OpenSSL (required for Prisma)
+# Alpine 3.17+ removed libssl1.1, but Prisma 5.10.2 needs it.
+# We add the legacy repository to install it.
+RUN apk add --no-cache openssl \
+    && echo "https://dl-cdn.alpinelinux.org/alpine/v3.15/main" >> /etc/apk/repositories \
+    && apk add --no-cache libssl1.1
 
 ENV NODE_ENV production
 ENV PORT 3002
@@ -47,9 +51,10 @@ RUN adduser --system --uid 1001 nextjs
 
 # Copy essential files
 COPY --from=builder /app/package.json ./package.json
+# Using wildcards for optional config files is cleaner
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.js ./next.config.js 2>/dev/null || :
-COPY --from=builder /app/next.config.ts ./next.config.ts 2>/dev/null || :
+# Copy next.config.js or ts if they exist (using wildcard trick)
+COPY --from=builder /app/next.config.* ./
 
 # Copy .next directory and ensure it is writable by the nextjs user
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
