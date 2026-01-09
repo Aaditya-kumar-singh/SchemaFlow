@@ -46,19 +46,23 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 # Copy essential files
+# Copy essential files
 COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/.next ./.next
+
+# Copy .next directory and ensure it is writable by the nextjs user
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
-# Copy Prisma schema/migrations if needed for runtime (though client is baked in)
-# COPY --from=builder /app/prisma ./prisma
 
 # Ensure logs directory exists and is writable
 RUN mkdir logs && chown nextjs:nodejs logs
+# IMPORTANT: Next.js writes to .next/cache at runtime
+# We must ensure the non-root user has write permissions to the entire .next folder
+RUN chown -R nextjs:nodejs .next
 
 USER nextjs
 
 EXPOSE 3002
 
-# We run the COMPILED custom server. Try both paths to be safe.
-CMD ["sh", "-c", "if [ -f dist/main.js ]; then node dist/main.js; else node dist/src/main.js; fi"]
+# We run the COMPILED custom server.
+CMD ["node", "dist/main.js"]
