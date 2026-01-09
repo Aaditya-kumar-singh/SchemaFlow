@@ -6,6 +6,13 @@
 # 1. Base Image
 FROM node:20-alpine AS base
 
+# Install OpenSSL (required for Prisma)
+# Alpine 3.17+ removed libssl1.1, but Prisma 5.10.2 needs it.
+# We add the legacy repository to install it globally for all stages.
+RUN apk add --no-cache openssl \
+    && echo "https://dl-cdn.alpinelinux.org/alpine/v3.15/main" >> /etc/apk/repositories \
+    && apk add --no-cache libssl1.1
+
 # 2. Dependencies
 FROM base AS deps
 WORKDIR /app
@@ -35,12 +42,7 @@ RUN npx tsc --project tsconfig.server.json
 FROM base AS runner
 WORKDIR /app
 
-# Install OpenSSL (required for Prisma)
-# Alpine 3.17+ removed libssl1.1, but Prisma 5.10.2 needs it.
-# We add the legacy repository to install it.
-RUN apk add --no-cache openssl \
-    && echo "https://dl-cdn.alpinelinux.org/alpine/v3.15/main" >> /etc/apk/repositories \
-    && apk add --no-cache libssl1.1
+# OpenSSL is already installed in 'base', no need to install again.
 
 ENV NODE_ENV production
 ENV PORT 3002
