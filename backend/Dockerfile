@@ -57,6 +57,8 @@ COPY --from=builder /app/package.json ./package.json
 # COPY --from=builder /app/public ./public
 # Copy next.config.js or ts if they exist (using wildcard trick)
 COPY --from=builder /app/next.config.* ./
+# IMPORTANT: Next.js tries to write to tsconfig.json at runtime to verify defaults
+COPY --from=builder --chown=nextjs:nodejs /app/tsconfig.json ./tsconfig.json
 
 # Copy .next directory and ensure it is writable by the nextjs user
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
