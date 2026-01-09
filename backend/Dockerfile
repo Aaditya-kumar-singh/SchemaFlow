@@ -54,7 +54,7 @@ RUN adduser --system --uid 1001 nextjs
 # Copy essential files
 COPY --from=builder /app/package.json ./package.json
 # Using wildcards for optional config files is cleaner
-COPY --from=builder /app/public ./public
+# COPY --from=builder /app/public ./public
 # Copy next.config.js or ts if they exist (using wildcard trick)
 COPY --from=builder /app/next.config.* ./
 
