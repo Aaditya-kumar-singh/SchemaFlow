@@ -52,7 +52,7 @@ export default function PricingPage() {
                         <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm relative hover:-translate-y-1 transition-all duration-300">
                             <h3 className="text-lg font-semibold text-slate-900 mb-2">Hobby</h3>
                             <div className="flex items-baseline gap-1 mb-6">
-                                <span className="text-4xl font-bold text-slate-900">₹0</span>
+                                <span className="text-4xl font-bold text-slate-900">$0</span>
                                 <span className="text-slate-500">/month</span>
                             </div>
                             <p className="text-slate-600 text-sm mb-6">Perfect for side projects and learning.</p>
@@ -65,11 +65,11 @@ export default function PricingPage() {
                         </div>
 
                         {/* Pro Tier (Popular) */}
-                        <div className="p-8 rounded-3xl bg-slate-900 text-white shadow-xl shadow-blue-900/20 relative transform md:-translate-y-4 border-2 border-blue-500 flex flex-col">
+                        <div className="p-8 rounded-3xl bg-slate-900 text-white shadow-2xl shadow-blue-500/30 relative transform md:-translate-y-4 border-2 border-blue-500 flex flex-col">
                             <div className="absolute top-0 right-0 bg-blue-500 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-bl-xl rounded-tr-lg">Most Popular</div>
                             <h3 className="text-lg font-semibold mb-2">Pro</h3>
                             <div className="flex items-baseline gap-1 mb-6">
-                                <span className="text-4xl font-bold">₹10</span>
+                                <span className="text-4xl font-bold">$10</span>
                                 <span className="text-slate-400">/month</span>
                             </div>
                             <p className="text-slate-400 text-sm mb-6">For professional developers and small teams.</p>

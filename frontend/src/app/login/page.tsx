@@ -54,7 +54,7 @@ export default function LoginPage() {
             <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                 <div className="bg-white dark:bg-slate-900 py-8 px-4 shadow sm:rounded-lg sm:px-10 border dark:border-slate-800 transition-colors duration-300">
                     {error && (
-                        <div className="mb-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-300 px-4 py-3 rounded relative text-sm">
+                        <div role="alert" aria-live="polite" className="mb-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-300 px-4 py-3 rounded relative text-sm">
                             <span className="block sm:inline">{error}</span>
                         </div>
                     )}

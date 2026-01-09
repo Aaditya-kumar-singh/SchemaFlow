@@ -21,8 +21,10 @@ import {
   Link2,
   Key,
   Star,
-  Check
+  Check,
+  FileCode
 } from 'lucide-react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import {
@@ -36,6 +38,7 @@ import {
 
 export default function LandingPage() {
   const router = useRouter();
+  const [activeView, setActiveView] = useState<'visual' | 'code'>('visual');
 
   return (
     <div className="min-h-screen bg-white overflow-hidden font-sans selection:bg-blue-100">
@@ -65,9 +68,11 @@ export default function LandingPage() {
               <Link href="/login" className="text-sm font-medium text-slate-600 hover:text-slate-900">
                 Log in
               </Link>
-              <Button onClick={() => router.push('/register')} size="sm" className="bg-slate-900 text-white hover:bg-slate-800 shadow-xl shadow-slate-900/10">
-                Get Started
-              </Button>
+              <Link href="/register">
+                <Button size="sm" className="bg-slate-900 text-white hover:bg-slate-800 shadow-xl shadow-slate-900/10">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -176,6 +181,33 @@ export default function LandingPage() {
                   <div className="w-8 h-8 rounded-full border-2 border-white bg-pink-500 text-white flex items-center justify-center text-xs font-bold">S</div>
                   <div className="w-8 h-8 rounded-full border-2 border-white bg-blue-500 text-white flex items-center justify-center text-xs font-bold">M</div>
                 </div>
+                <div className="h-6 w-px bg-slate-200 mx-2"></div>
+
+                {/* View Tabs (Mobile/Tablet only) */}
+                <div className="flex lg:hidden bg-slate-100 p-1 rounded-lg">
+                  <button
+                    onClick={() => setActiveView('visual')}
+                    className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${activeView === 'visual' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                  >
+                    Visual
+                  </button>
+                  <button
+                    onClick={() => setActiveView('code')}
+                    className={`px-3 py-1 text-xs font-medium rounded-md transition-all flex items-center gap-1.5 ${activeView === 'code' ? 'bg-white text-purple-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                  >
+                    <Code2 className="w-3 h-3" /> Code
+                  </button>
+                </div>
+
+                {/* Desktop "Split View" Badge */}
+                <div className="hidden lg:flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-200">
+                  <span className="flex items-center gap-1.5 text-xs font-medium text-slate-600">
+                    <Layout className="w-3.5 h-3.5 text-blue-500" /> Split View
+                  </span>
+                </div>
+
+                <div className="h-6 w-px bg-slate-200 mx-2"></div>
+
                 <Button size="sm" variant="outline" className="h-8 text-xs gap-2">
                   <Share2 className="w-3.5 h-3.5" /> Share
                 </Button>
@@ -185,188 +217,189 @@ export default function LandingPage() {
               </div>
             </div>
 
+            {/* Split View Container for Desktop, Conditional for Mobile */}
             <div className="flex h-[600px] bg-slate-50 relative overflow-hidden">
-              {/* Canvas Background Grid */}
-              <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
-              {/* Main Canvas Area */}
-              <div className="flex-1 relative">
+              {/* Visual View Panel (Visible if: Mobile+Visual OR Desktop) */}
+              <div className={`flex-1 relative border-r border-slate-200 transition-all duration-300 ${activeView === 'code' ? 'hidden lg:block' : 'block'}`}>
+                {/* Canvas Background Grid */}
+                <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
-                {/* Floating Toolbar (Mimicking Real App) */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-lg border border-slate-200 p-1.5 flex items-center gap-1 z-20">
-                  <Button variant="ghost" size="icon" className="h-8 w-8 text-slate-500 hover:text-slate-900 hover:bg-slate-100">
-                    <MousePointer2 className="w-4 h-4" />
-                  </Button>
-                  <div className="w-px h-4 bg-slate-200 mx-1"></div>
-                  <Button variant="ghost" size="sm" className="h-8 text-xs gap-2 text-slate-600 hover:bg-blue-50 hover:text-blue-600">
-                    <Layout className="w-4 h-4" /> Add Table
-                  </Button>
-                  <Button variant="ghost" size="sm" className="h-8 text-xs gap-2 text-slate-600 hover:bg-green-50 hover:text-green-600">
-                    <Code2 className="w-4 h-4" /> Add Enum
-                  </Button>
-                  <div className="w-px h-4 bg-slate-200 mx-1"></div>
-                  <Button variant="ghost" size="icon" className="h-8 w-8 text-slate-400">
-                    <Search className="w-4 h-4" />
-                  </Button>
-                </div>
+                {/* Main Canvas Area */}
+                <div className="flex-1 relative h-full">
 
-                {/* Nodes Container */}
-                <div className="absolute inset-0 p-10 overflow-hidden transform scale-100 origin-top-left transition-transform duration-500 ease-in-out">
+                  {/* Floating Toolbar (Mimicking Real App) */}
+                  <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-lg border border-slate-200 p-1.5 flex items-center gap-1 z-20">
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-slate-500 hover:text-slate-900 hover:bg-slate-100">
+                      <MousePointer2 className="w-4 h-4" />
+                    </Button>
+                    <div className="w-px h-4 bg-slate-200 mx-1"></div>
+                    <Button variant="ghost" size="sm" className="h-8 text-xs gap-2 text-slate-600 hover:bg-blue-50 hover:text-blue-600">
+                      <Layout className="w-4 h-4" /> Add Table
+                    </Button>
+                    <Button variant="ghost" size="sm" className="h-8 text-xs gap-2 text-slate-600 hover:bg-green-50 hover:text-green-600">
+                      <Code2 className="w-4 h-4" /> Add Enum
+                    </Button>
+                    <div className="w-px h-4 bg-slate-200 mx-1"></div>
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-slate-400">
+                      <Search className="w-4 h-4" />
+                    </Button>
+                  </div>
 
-                  {/* Node 1: Users */}
-                  <div className="absolute top-20 left-20 w-64 bg-white rounded-lg shadow-xl border border-slate-200/60 overflow-hidden group/node hover:ring-2 hover:ring-blue-500/50 transition-all cursor-grab active:cursor-grabbing">
-                    <div className="h-2 bg-blue-500 w-full"></div>
-                    <div className="p-3 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
-                      <span className="font-bold text-slate-700 text-sm flex items-center gap-2">
-                        <Database className="w-3.5 h-3.5 text-blue-500" /> users
-                      </span>
-                      <Settings className="w-3.5 h-3.5 text-slate-400 hover:text-slate-600 cursor-pointer" />
+                  {/* Nodes Container */}
+                  <div className="absolute inset-0 p-10 overflow-hidden transform scale-100 origin-top-left transition-transform duration-500 ease-in-out">
+
+                    {/* Node 1: Users */}
+                    <div className="absolute top-20 left-10 w-56 bg-white rounded-lg shadow-xl border border-slate-200/60 overflow-hidden group/node hover:ring-2 hover:ring-blue-500/50 transition-all cursor-grab active:cursor-grabbing">
+                      <div className="h-2 bg-blue-500 w-full"></div>
+                      <div className="p-3 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
+                        <span className="font-bold text-slate-700 text-sm flex items-center gap-2">
+                          <Database className="w-3.5 h-3.5 text-blue-500" /> users
+                        </span>
+                        <Settings className="w-3.5 h-3.5 text-slate-400 hover:text-slate-600 cursor-pointer" />
+                      </div>
+                      <div className="p-2 space-y-1">
+                        <div className="flex items-center justify-between group/field hover:bg-blue-50 p-1.5 rounded cursor-pointer transition-colors">
+                          <div className="flex items-center gap-2">
+                            <Key className="w-3 h-3 text-yellow-500 rotate-45" />
+                            <span className="text-xs font-medium text-slate-700">id</span>
+                          </div>
+                          <span className="text-[10px] text-slate-400 font-mono">UUID</span>
+                        </div>
+                        <div className="flex items-center justify-between group/field hover:bg-slate-50 p-1.5 rounded cursor-pointer">
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3"></div>
+                            <span className="text-xs text-slate-600">email</span>
+                          </div>
+                          <span className="text-[10px] text-slate-400 font-mono">VARCHAR(255)</span>
+                        </div>
+                        <div className="flex items-center justify-between group/field hover:bg-slate-50 p-1.5 rounded cursor-pointer">
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3"></div>
+                            <span className="text-xs text-slate-600">full_name</span>
+                          </div>
+                          <span className="text-[10px] text-slate-400 font-mono">VARCHAR</span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="p-2 space-y-1">
-                      <div className="flex items-center justify-between group/field hover:bg-blue-50 p-1.5 rounded cursor-pointer transition-colors">
-                        <div className="flex items-center gap-2">
-                          <Key className="w-3 h-3 text-yellow-500 rotate-45" />
-                          <span className="text-xs font-medium text-slate-700">id</span>
-                        </div>
-                        <span className="text-[10px] text-slate-400 font-mono">UUID</span>
+
+                    {/* Node 2: Orders */}
+                    <div className="absolute top-40 left-[280px] w-56 bg-white rounded-lg shadow-2xl border border-blue-200 overflow-hidden ring-4 ring-blue-500/10 z-10 transition-all">
+                      <div className="h-2 bg-purple-500 w-full"></div>
+                      <div className="p-3 border-b border-slate-100 bg-purple-50/50 flex justify-between items-center">
+                        <span className="font-bold text-slate-700 text-sm flex items-center gap-2">
+                          <Database className="w-3.5 h-3.5 text-purple-500" /> orders
+                        </span>
+                        <Badge variant="secondary" className="text-[10px] h-5 bg-purple-100 text-purple-700">New</Badge>
                       </div>
-                      <div className="flex items-center justify-between group/field hover:bg-slate-50 p-1.5 rounded cursor-pointer">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3"></div>
-                          <span className="text-xs text-slate-600">email</span>
+                      <div className="p-2 space-y-1 bg-white">
+                        <div className="flex items-center justify-between group/field hover:bg-purple-50 p-1.5 rounded cursor-pointer">
+                          <div className="flex items-center gap-2">
+                            <Key className="w-3 h-3 text-yellow-500 rotate-45" />
+                            <span className="text-xs font-medium text-slate-700">id</span>
+                          </div>
+                          <span className="text-[10px] text-slate-400 font-mono">UUID</span>
                         </div>
-                        <span className="text-[10px] text-slate-400 font-mono">VARCHAR(255)</span>
+                        <div className="flex items-center justify-between bg-blue-50 p-1.5 rounded cursor-pointer border border-blue-100 relative overflow-hidden">
+                          <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-blue-500"></div>
+                          <div className="flex items-center gap-2">
+                            <Link2 className="w-3 h-3 text-blue-500" />
+                            <span className="text-xs font-bold text-slate-900">user_id</span>
+                          </div>
+                          <span className="text-[10px] text-slate-500 font-mono">FK(users)</span>
+                        </div>
+                        <div className="flex items-center justify-between group/field hover:bg-slate-50 p-1.5 rounded cursor-pointer">
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3"></div>
+                            <span className="text-xs text-slate-600">total_amount</span>
+                          </div>
+                          <span className="text-[10px] text-slate-400 font-mono">DECIMAL</span>
+                        </div>
                       </div>
-                      <div className="flex items-center justify-between group/field hover:bg-slate-50 p-1.5 rounded cursor-pointer">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3"></div>
-                          <span className="text-xs text-slate-600">full_name</span>
-                        </div>
-                        <span className="text-[10px] text-slate-400 font-mono">VARCHAR</span>
+                    </div>
+
+                    {/* Connection Line */}
+                    <svg className="absolute inset-0 w-full h-full pointer-events-none drop-shadow-md">
+                      <defs>
+                        <linearGradient id="gradient-line" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.2" />
+                          <stop offset="50%" stopColor="#3b82f6" stopOpacity="1" />
+                          <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.2" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M 235 240 C 265 240, 250 320, 280 320"
+                        fill="none"
+                        stroke="url(#gradient-line)"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                      />
+                      <circle r="4" fill="#3b82f6">
+                        <animateMotion dur="2s" repeatCount="indefinite" path="M 235 240 C 265 240, 250 320, 280 320" />
+                      </circle>
+                    </svg>
+
+                    {/* Multiplayer Cursor */}
+                    <div className="absolute top-[260px] left-[350px] z-50 pointer-events-none transition-all duration-1000 ease-in-out animate-pulse-slow">
+                      <MousePointer2 className="w-5 h-5 text-pink-500 fill-pink-500 stroke-white stroke-[2]" />
+                      <div className="ml-4 -mt-2 bg-pink-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold shadow-sm whitespace-nowrap">
+                        Sarah (PM)
                       </div>
                     </div>
                   </div>
 
-                  {/* Node 2: Orders */}
-                  <div className="absolute top-32 left-[400px] w-64 bg-white rounded-lg shadow-2xl border border-blue-200 overflow-hidden ring-4 ring-blue-500/10 z-10 transition-all">
-                    <div className="h-2 bg-purple-500 w-full"></div>
-                    <div className="p-3 border-b border-slate-100 bg-purple-50/50 flex justify-between items-center">
-                      <span className="font-bold text-slate-700 text-sm flex items-center gap-2">
-                        <Database className="w-3.5 h-3.5 text-purple-500" /> orders
-                      </span>
-                      <Badge variant="secondary" className="text-[10px] h-5 bg-purple-100 text-purple-700">New</Badge>
-                    </div>
-                    <div className="p-2 space-y-1 bg-white">
-                      <div className="flex items-center justify-between group/field hover:bg-purple-50 p-1.5 rounded cursor-pointer">
-                        <div className="flex items-center gap-2">
-                          <Key className="w-3 h-3 text-yellow-500 rotate-45" />
-                          <span className="text-xs font-medium text-slate-700">id</span>
-                        </div>
-                        <span className="text-[10px] text-slate-400 font-mono">UUID</span>
-                      </div>
-                      <div className="flex items-center justify-between bg-blue-50 p-1.5 rounded cursor-pointer border border-blue-100 relative overflow-hidden">
-                        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-blue-500"></div>
-                        <div className="flex items-center gap-2">
-                          <Link2 className="w-3 h-3 text-blue-500" />
-                          <span className="text-xs font-bold text-slate-900">user_id</span>
-                        </div>
-                        <span className="text-[10px] text-slate-500 font-mono">FK(users)</span>
-                      </div>
-                      <div className="flex items-center justify-between group/field hover:bg-slate-50 p-1.5 rounded cursor-pointer">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3"></div>
-                          <span className="text-xs text-slate-600">total_amount</span>
-                        </div>
-                        <span className="text-[10px] text-slate-400 font-mono">DECIMAL</span>
-                      </div>
-                      <div className="mt-2 pt-2 border-t border-slate-100 flex justify-center">
-                        <Button size="sm" variant="ghost" className="h-6 text-[10px] w-full text-slate-400 hover:text-slate-600">
-                          <Plus className="w-3 h-3 mr-1" /> Add Field
-                        </Button>
-                      </div>
-                    </div>
+                  {/* Bottom Controls */}
+                  <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur border border-slate-200 rounded-lg p-1 flex gap-1 shadow-sm">
+                    <Button size="icon" variant="ghost" className="h-6 w-6"><Maximize2 className="w-3.5 h-3.5 text-slate-600" /></Button>
+                    <Button size="icon" variant="ghost" className="h-6 w-6"><Minus className="w-3.5 h-3.5 text-slate-600" /></Button>
+                    <span className="text-[10px] font-mono text-slate-500 flex items-center px-1">100%</span>
+                    <Button size="icon" variant="ghost" className="h-6 w-6"><Plus className="w-3.5 h-3.5 text-slate-600" /></Button>
                   </div>
-
-                  {/* Connection Line with Animated Particles */}
-                  <svg className="absolute inset-0 w-full h-full pointer-events-none drop-shadow-md">
-                    <defs>
-                      <linearGradient id="gradient-line" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.2" />
-                        <stop offset="50%" stopColor="#3b82f6" stopOpacity="1" />
-                        <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.2" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M 320 180 C 360 180, 360 250, 400 250"
-                      fill="none"
-                      stroke="url(#gradient-line)"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                    />
-                    <circle r="4" fill="#3b82f6">
-                      <animateMotion dur="2s" repeatCount="indefinite" path="M 320 180 C 360 180, 360 250, 400 250" />
-                    </circle>
-                  </svg>
-
-                  {/* Multiplayer Cursor */}
-                  <div className="absolute top-[260px] left-[520px] z-50 pointer-events-none transition-all duration-1000 ease-in-out animate-pulse-slow">
-                    <MousePointer2 className="w-5 h-5 text-pink-500 fill-pink-500 stroke-white stroke-[2]" />
-                    <div className="ml-4 -mt-2 bg-pink-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold shadow-sm whitespace-nowrap">
-                      Sarah (PM)
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Controls */}
-                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur border border-slate-200 rounded-lg p-1 flex gap-1 shadow-sm">
-                  <Button size="icon" variant="ghost" className="h-6 w-6"><Maximize2 className="w-3.5 h-3.5 text-slate-600" /></Button>
-                  <Button size="icon" variant="ghost" className="h-6 w-6"><Minus className="w-3.5 h-3.5 text-slate-600" /></Button>
-                  <span className="text-[10px] font-mono text-slate-500 flex items-center px-1">100%</span>
-                  <Button size="icon" variant="ghost" className="h-6 w-6"><Plus className="w-3.5 h-3.5 text-slate-600" /></Button>
                 </div>
               </div>
 
-              {/* Right Properties Panel (Static Fake) */}
-              <div className="w-72 bg-white border-l border-slate-200 hidden md:flex flex-col">
-                <div className="h-10 border-b border-slate-100 flex items-center px-4 justify-between bg-slate-50/50">
-                  <span className="text-xs font-bold text-slate-700 uppercase tracking-wide">Properties</span>
-                  <Settings className="w-3 h-3 text-slate-400" />
+              {/* Code View Panel (Visible if: Mobile+Code OR Desktop) */}
+              <div className={`w-full lg:w-[420px] bg-[#1e1e1e] flex flex-col font-mono text-sm leading-relaxed overflow-hidden h-full ${activeView === 'visual' ? 'hidden lg:flex' : 'flex'}`}>
+                {/* Fake Line Numbers */}
+                <div className="flex flex-1 overflow-hidden">
+                  <div className="hidden sm:flex flex-col items-end px-3 py-6 text-slate-600 select-none bg-[#1e1e1e] border-r border-slate-700/50 w-12 text-right text-xs">
+                    {Array.from({ length: 25 }).map((_, i) => (
+                      <div key={i}>{i + 1}</div>
+                    ))}
+                  </div>
+
+                  {/* Code Content */}
+                  <div className="flex-1 p-6 overflow-auto text-slate-300">
+                    <div className="space-y-1 text-xs sm:text-sm">
+                      <div><span className="text-pink-400">model</span> <span className="text-blue-400">User</span> {'{'}</div>
+                      <div className="pl-4"><span className="text-blue-300">id</span>        <span className="text-green-400">String</span>   <span className="text-yellow-300">@id</span> <span className="text-yellow-300">@default</span>(uuid())</div>
+                      <div className="pl-4"><span className="text-blue-300">email</span>     <span className="text-green-400">String</span>   <span className="text-yellow-300">@unique</span></div>
+                      <div className="pl-4"><span className="text-blue-300">fullName</span>  <span className="text-green-400">String?</span>  <span className="text-yellow-300">@map</span>(<span className="text-orange-300">"full_name"</span>)</div>
+                      <div className="pl-4"><span className="text-blue-300">orders</span>    <span className="text-green-400">Order[]</span></div>
+                      <div className="pl-4"><span className="text-blue-300">createdAt</span> <span className="text-green-400">DateTime</span> <span className="text-yellow-300">@default</span>(now())</div>
+                      <div>{'}'}</div>
+                      <br />
+                      <div><span className="text-pink-400">model</span> <span className="text-blue-400">Order</span> {'{'}</div>
+                      <div className="pl-4"><span className="text-blue-300">id</span>          <span className="text-green-400">String</span>   <span className="text-yellow-300">@id</span> <span className="text-yellow-300">@default</span>(uuid())</div>
+                      <div className="pl-4"><span className="text-blue-300">user</span>        <span className="text-green-400">User</span>     <span className="text-yellow-300">@relation</span>(fields: [userId], references: [id])</div>
+                      <div className="pl-4"><span className="text-blue-300">userId</span>      <span className="text-green-400">String</span>   <span className="text-yellow-300">@map</span>(<span className="text-orange-300">"user_id"</span>)</div>
+                      <div className="pl-4"><span className="text-blue-300">totalAmount</span> <span className="text-green-400">Decimal</span>  <span className="text-yellow-300">@map</span>(<span className="text-orange-300">"total_amount"</span>)</div>
+                      <div className="pl-4"><span className="text-blue-300">status</span>      <span className="text-green-400">String</span>   <span className="text-yellow-300">@default</span>(<span className="text-orange-300">"PENDING"</span>)</div>
+                      <div>{'}'}</div>
+                    </div>
+
+                    {/* Cursor Animation in Code */}
+                    <div className="inline-block w-2 H-4 bg-blue-400 animate-pulse ml-1 align-middle"></div>
+                  </div>
                 </div>
-                <div className="p-4 space-y-6">
-                  <div className="space-y-2">
-                    <label className="text-xs font-medium text-slate-500">Table Name</label>
-                    <div className="h-8 w-full bg-slate-50 border border-slate-200 rounded px-3 flex items-center text-sm font-medium text-slate-800">
-                      orders
-                    </div>
+
+                {/* Footer for Code Panel */}
+                <div className="h-10 border-t border-slate-700/50 bg-[#1e1e1e] flex items-center justify-between px-4">
+                  <div className="flex gap-2 text-[10px] text-slate-500 uppercase tracking-widest font-bold">
+                    Generated Schema
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <label className="text-xs font-medium text-slate-500">Columns (3)</label>
-                      <Plus className="w-3 h-3 text-blue-500 cursor-pointer" />
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 p-2 bg-slate-50 rounded border border-slate-100">
-                        <Key className="w-3 h-3 text-yellow-500" />
-                        <div className="flex-1">
-                          <div className="h-1.5 w-8 bg-slate-300 rounded mb-1"></div>
-                          <div className="h-1 w-12 bg-slate-200 rounded"></div>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 p-2 bg-blue-50/50 rounded border border-blue-100">
-                        <Link2 className="w-3 h-3 text-blue-500" />
-                        <div className="flex-1">
-                          <div className="h-1.5 w-12 bg-blue-200 rounded mb-1"></div>
-                          <div className="h-1 w-8 bg-blue-100 rounded"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="pt-4 border-t border-slate-100">
-                    <label className="text-xs font-medium text-slate-500 mb-2 block">Settings</label>
-                    <div className="flex items-center justify-between text-xs text-slate-600 mb-2">
-                      <span>Soft Delete</span>
-                      <div className="w-8 h-4 bg-slate-200 rounded-full relative"><div className="w-3 h-3 bg-white rounded-full absolute top-0.5 left-0.5 shadow-sm"></div></div>
-                    </div>
+                  <div className="flex gap-2 text-xs text-slate-400 font-medium">
+                    <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-green-500"></div> Prisma</span>
                   </div>
                 </div>
               </div>
