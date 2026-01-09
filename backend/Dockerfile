@@ -35,8 +35,8 @@ RUN npx tsc --project tsconfig.server.json
 FROM base AS runner
 WORKDIR /app
 
-# Install OpenSSL (required for Prisma)
-RUN apk add --no-cache openssl
+# Install OpenSSL (required for Prisma) and compat libraries for Alpine
+RUN apk add --no-cache openssl libssl1.1 || apk add --no-cache openssl compat-openssl1.1
 
 ENV NODE_ENV production
 ENV PORT 3002
@@ -46,13 +46,18 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 # Copy essential files
-# Copy essential files
 COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/next.config.js ./next.config.js 2>/dev/null || :
+COPY --from=builder /app/next.config.ts ./next.config.ts 2>/dev/null || :
 
 # Copy .next directory and ensure it is writable by the nextjs user
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
+
+# Copy Prisma schema for reference (optional but good for debugging)
+COPY --from=builder /app/prisma ./prisma
 
 # Ensure logs directory exists and is writable
 RUN mkdir logs && chown nextjs:nodejs logs
