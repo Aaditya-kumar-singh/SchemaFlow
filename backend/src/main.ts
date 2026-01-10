@@ -7,6 +7,14 @@ try {
 } catch (e) {
     console.error('Failed to manually load .env', e);
 }
+// Global crash handlers
+process.on('uncaughtException', (err) => {
+    console.error('🔥 UNCAUGHT EXCEPTION:', err);
+    // Keep it alive to flush logs? No, best to let it restart but Log it first.
+});
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('🔥 UNHANDLED REJECTION:', reason);
+});
 
 import { createServer } from 'http';
 import { parse } from 'url';
@@ -81,12 +89,18 @@ app.prepare().then(() => {
     const server = createServer(async (req, res) => {
         // CORS Configuration
         const origin = req.headers.origin;
-        // Allow dynamic origin for credentials support
-        if (origin) {
+        const allowedOrigins = [
+            'https://schemaflow.pages.dev',
+            'http://localhost:3000',
+            'https://schemaflow-backend.onrender.com'
+        ];
+
+        // Allow dynamic origin for credentials support if matched
+        if (origin && (allowedOrigins.includes(origin) || origin.endsWith('.pages.dev'))) {
             res.setHeader('Access-Control-Allow-Origin', origin);
         } else {
-            // Fallback
-            res.setHeader('Access-Control-Allow-Origin', '*');
+            // Fallback to echo if not strict, or just '*'
+            if (origin) res.setHeader('Access-Control-Allow-Origin', origin);
         }
 
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
