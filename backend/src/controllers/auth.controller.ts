@@ -80,7 +80,13 @@ export class AuthController {
             );
 
             console.log('[LOGIN DEBUG] Token generated. Sending response...');
-            return Response.json({ user: { id: user.id, email: user.email, name: user.name }, token });
+            return new Response(JSON.stringify({
+                user: { id: user.id, email: user.email, name: user.name },
+                token
+            }), {
+                status: 200,
+                headers: { 'Content-Type': 'application/json' }
+            });
         } catch (error: any) {
             if (error instanceof z.ZodError) {
                 return Response.json({ error: 'Validation Error', details: error.issues }, { status: 400 });
