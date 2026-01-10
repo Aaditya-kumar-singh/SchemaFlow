@@ -5,6 +5,7 @@ A modern, collaborative database modeling application for MySQL and MongoDB with
 [![Status](https://img.shields.io/badge/Status-Production_Ready-green)](https://github.com)
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-1.1.0-blue)](https://github.com)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-ff69b4?style=flat&logo=safari&logoColor=white)](https://schemaflow.pages.dev)
 
 ---
 
