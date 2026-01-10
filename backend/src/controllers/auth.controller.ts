@@ -72,12 +72,14 @@ export class AuthController {
                 throw ApiError.unauthorized('Invalid email or password');
             }
 
+            console.log('[LOGIN DEBUG] Generating token...');
             const token = jwt.sign(
                 { userId: user.id, email: user.email },
                 process.env.JWT_SECRET || 'secret',
                 { expiresIn: '7d' }
             );
 
+            console.log('[LOGIN DEBUG] Token generated. Sending response...');
             return Response.json({ user: { id: user.id, email: user.email, name: user.name }, token });
         } catch (error: any) {
             if (error instanceof z.ZodError) {
