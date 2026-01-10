@@ -11,7 +11,24 @@ export interface ApiErrorResponse {
     timestamp: string;
 }
 
-const baseURL = process.env.NEXT_PUBLIC_API_URL || '/api/v1';
+const getBaseUrl = () => {
+    let url = process.env.NEXT_PUBLIC_API_URL;
+    if (!url) return '/api/v1';
+
+    // Remove trailing slash if present
+    if (url.endsWith('/')) {
+        url = url.slice(0, -1);
+    }
+
+    // Append /api/v1 if not present
+    if (!url.endsWith('/api/v1')) {
+        url += '/api/v1';
+    }
+
+    return url;
+};
+
+const baseURL = getBaseUrl();
 console.log('🔌 API Base URL:', baseURL);
 
 const api = axios.create({
