@@ -1,4 +1,5 @@
 import api from '@/lib/api/axios';
+import { BackendResponse } from '@/types/api';
 
 export interface Team {
     id: string;
@@ -15,31 +16,25 @@ export interface TeamMember {
     role: 'OWNER' | 'EDITOR' | 'VIEWER';
 }
 
-interface ApiResponse<T> {
-    success: boolean;
-    data: T;
-    timestamp: string;
-}
-
 export const teamsApi = {
     list: async () => {
-        const { data } = await api.get<ApiResponse<Team[]>>('/teams');
+        const { data } = await api.get<BackendResponse<Team[]>>('/teams');
         // Backend returns wrapped response, so we need data.data
         return data.data;
     },
 
     create: async (name: string) => {
-        const { data } = await api.post<ApiResponse<Team>>('/teams', { name });
+        const { data } = await api.post<BackendResponse<Team>>('/teams', { name });
         return data.data;
     },
 
     getMembers: async (teamId: string) => {
-        const { data } = await api.get<ApiResponse<TeamMember[]>>(`/teams/${teamId}/members`);
+        const { data } = await api.get<BackendResponse<TeamMember[]>>(`/teams/${teamId}/members`);
         return data.data;
     },
 
     inviteMember: async (teamId: string, email: string, role: TeamMember['role'] = 'VIEWER') => {
-        const { data } = await api.post<ApiResponse<any>>(`/teams/${teamId}/members`, { email, role });
+        const { data } = await api.post<BackendResponse<any>>(`/teams/${teamId}/members`, { email, role });
         return data.data;
     }
 };

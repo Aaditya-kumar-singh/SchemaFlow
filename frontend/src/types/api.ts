@@ -1,14 +1,22 @@
-// API Response Types
-export interface ApiResponse<T> {
+/**
+ * Standard backend API response wrapper
+ * All successful responses from the backend are wrapped in this structure
+ */
+export interface BackendResponse<T> {
+  success: boolean;
   data: T;
-  message?: string;
-  error?: string;
+  timestamp: string;
 }
 
-export interface ApiError {
-  message: string;
-  statusCode: number;
-  errors?: Record<string, string[]>;
+/**
+ * Backend error response structure
+ */
+export interface BackendErrorResponse {
+  success: false;
+  error: {
+    code: string;
+    message: string;
+    details?: any;
+  };
+  timestamp: string;
 }
-
-// Common types will be added here

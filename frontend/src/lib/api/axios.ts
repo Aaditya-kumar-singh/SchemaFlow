@@ -1,15 +1,5 @@
 import axios, { AxiosError } from 'axios';
-
-// Match the backend response structure
-export interface ApiErrorResponse {
-    success: boolean;
-    error: {
-        code: string;
-        message: string;
-        details?: any;
-    };
-    timestamp: string;
-}
+import { BackendErrorResponse } from '@/types/api';
 
 const getBaseUrl = () => {
     let url = process.env.NEXT_PUBLIC_API_URL;
@@ -66,7 +56,7 @@ api.interceptors.response.use(
         // should know to look at response.data.data
         return response;
     },
-    (error: AxiosError<ApiErrorResponse>) => {
+    (error: AxiosError<BackendErrorResponse>) => {
         // 1. Extract the standardized error message from backend
         const backendError = error.response?.data?.error;
 

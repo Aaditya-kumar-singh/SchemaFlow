@@ -1,4 +1,5 @@
 import api from '@/lib/api/axios';
+import { BackendResponse } from '@/types/api';
 
 export interface Project {
     id: string;
@@ -15,10 +16,6 @@ export interface CreateProjectDto {
     type: 'MYSQL' | 'MONGODB';
     description?: string;
     content?: any;
-}
-
-interface ApiResponse<T> {
-    data: T;
 }
 
 export interface PaginatedResponse<T> {
@@ -50,7 +47,7 @@ export const projectsApi = {
         // Axios (api.get) returns { data: ... }
         // So we get: data.data which is the object above.
 
-        const { data } = await api.get<ApiResponse<any>>('/projects', { params });
+        const { data } = await api.get<BackendResponse<any>>('/projects', { params });
 
         // This 'data.data' is the object containing { projects, total, page... }
         // It is NOT nested under another 'data' key inside it.
@@ -71,7 +68,7 @@ export const projectsApi = {
      * Get a single project by ID
      */
     async getById(id: string): Promise<Project> {
-        const { data } = await api.get<ApiResponse<Project>>(`/projects/${id}`);
+        const { data } = await api.get<BackendResponse<Project>>(`/projects/${id}`);
         return data.data;
     },
 
@@ -79,7 +76,7 @@ export const projectsApi = {
      * Create a new project
      */
     async create(dto: CreateProjectDto): Promise<Project> {
-        const { data } = await api.post<ApiResponse<Project>>('/projects', dto);
+        const { data } = await api.post<BackendResponse<Project>>('/projects', dto);
         return data.data;
     },
 
@@ -87,7 +84,7 @@ export const projectsApi = {
      * Update an existing project
      */
     async update(id: string, updates: Partial<Project>): Promise<Project> {
-        const { data } = await api.patch<ApiResponse<Project>>(`/projects/${id}`, updates);
+        const { data } = await api.patch<BackendResponse<Project>>(`/projects/${id}`, updates);
         return data.data;
     },
 
@@ -102,7 +99,7 @@ export const projectsApi = {
      * Get version history for a project
      */
     async getVersions(projectId: string, params: { page?: number; limit?: number } = {}): Promise<{ versions: any[], meta: any }> {
-        const { data } = await api.get<ApiResponse<PaginatedResponse<any>>>(`/projects/${projectId}/versions`, { params });
+        const { data } = await api.get<BackendResponse<PaginatedResponse<any>>>(`/projects/${projectId}/versions`, { params });
         return {
             versions: data.data.versions || [],
             meta: data.data.meta
@@ -113,7 +110,7 @@ export const projectsApi = {
      * Restore a project version
      */
     async restoreVersion(projectId: string, versionId: string): Promise<Project> {
-        const { data } = await api.post<ApiResponse<Project>>(`/projects/${projectId}/versions/${versionId}/restore`);
+        const { data } = await api.post<BackendResponse<Project>>(`/projects/${projectId}/versions/${versionId}/restore`);
         return data.data;
     },
 
@@ -121,7 +118,7 @@ export const projectsApi = {
      * Export project to SQL/JS
      */
     async export(id: string): Promise<{ filename: string; content: string }> {
-        const { data } = await api.post<ApiResponse<{ filename: string; content: string }>>(`/projects/${id}/export`);
+        const { data } = await api.post<BackendResponse<{ filename: string; content: string }>>(`/projects/${id}/export`);
         return data.data;
     },
 
@@ -129,19 +126,19 @@ export const projectsApi = {
      * Import diagram from DB connection
      */
     async importFromDb(type: 'MYSQL' | 'MONGODB', connectionString: string): Promise<any> {
-        const { data } = await api.post<ApiResponse<any>>('/import', { type, connectionString });
+        const { data } = await api.post<BackendResponse<any>>('/import', { type, connectionString });
         return data.data;
     },
 
     // --- Collaboration ---
 
     async share(projectId: string, email: string, role: 'EDITOR' | 'VIEWER'): Promise<any> {
-        const { data } = await api.post<ApiResponse<any>>(`/projects/${projectId}/share`, { email, role });
+        const { data } = await api.post<BackendResponse<any>>(`/projects/${projectId}/share`, { email, role });
         return data.data;
     },
 
     async getCollaborators(projectId: string): Promise<Collaborator[]> {
-        const { data } = await api.get<ApiResponse<Collaborator[]>>(`/projects/${projectId}/collaborators`);
+        const { data } = await api.get<BackendResponse<Collaborator[]>>(`/projects/${projectId}/collaborators`);
         return data.data;
     },
 
