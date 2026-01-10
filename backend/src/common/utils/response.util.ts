@@ -20,8 +20,8 @@ export class ResponseUtil {
             data,
             timestamp: new Date().toISOString(),
         };
-        // Use standard Response to avoid crash in custom server environment
-        return new Response(JSON.stringify(payload), {
+        // Use new NextResponse constructor to satisfy return types and avoid static method crashes
+        return new NextResponse(JSON.stringify(payload), {
             status,
             headers: {
                 ...headers,
@@ -40,8 +40,8 @@ export class ResponseUtil {
             },
             timestamp: new Date().toISOString(),
         };
-        // Use standard Response
-        return new Response(JSON.stringify(payload), {
+        // Use new NextResponse
+        return new NextResponse(JSON.stringify(payload), {
             status,
             headers: { 'Content-Type': 'application/json' }
         });
