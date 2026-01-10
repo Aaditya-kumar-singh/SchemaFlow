@@ -116,19 +116,8 @@ app.prepare().then(() => {
         addTrailingSlash: false,
         cors: {
             origin: (requestOrigin, callback) => {
-                const allowedOrigins = [
-                    'http://localhost:3000',
-                    process.env.FRONTEND_URL,
-                    'https://schemaflow.pages.dev' // specific Cloudflare deployment
-                ];
-
-                if (!requestOrigin || allowedOrigins.includes(requestOrigin)) {
-                    callback(null, true);
-                } else {
-                    // For dev purposes, we might still want to allow all, but let's log it
-                    console.warn(`Origin ${requestOrigin} not explicitly allowed but proceeding for dev/demo.`);
-                    callback(null, true);
-                }
+                // Allow all origins for connectivity debugging
+                callback(null, true);
             },
             methods: ["GET", "POST"],
             credentials: true
