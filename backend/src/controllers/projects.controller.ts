@@ -6,6 +6,8 @@ import { MysqlExporter } from '@/services/export/mysql.exporter';
 import { MongoExporter } from '@/services/export/mongo.exporter';
 import { DiagramContent } from '@/types/diagram';
 
+import { verify } from 'jsonwebtoken';
+
 // Helper to extract userId from token
 const getUserId = (req: NextRequest) => {
     const authHeader = req.headers.get('authorization');
@@ -15,9 +17,11 @@ const getUserId = (req: NextRequest) => {
 
     try {
         const token = authHeader.split(' ')[1];
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        return payload.userId;
+        // Verify and decode securely
+        const decoded = verify(token, process.env.JWT_SECRET || 'secret') as any;
+        return decoded.userId;
     } catch (e) {
+        console.error('Token verification failed:', e);
         throw new Error('UNAUTHORIZED: Invalid token');
     }
 };
