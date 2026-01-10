@@ -16,3 +16,10 @@
 !/AWS_DEPLOYMENT.md
 !/DEPLOYMENT_MIGRATION.md
 !/docker-compose.yml
+
+# Build artifacts
+*.tsbuildinfo
+
+# Temporary documentation files
+*_FIX.md
+*_DOC.md
