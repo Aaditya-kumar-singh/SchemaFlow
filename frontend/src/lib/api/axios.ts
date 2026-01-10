@@ -11,8 +11,11 @@ export interface ApiErrorResponse {
     timestamp: string;
 }
 
+const baseURL = process.env.NEXT_PUBLIC_API_URL || '/api/v1';
+console.log('🔌 API Base URL:', baseURL);
+
 const api = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_URL || '/api/v1',
+    baseURL,
     timeout: 30000,
     headers: {
         'Content-Type': 'application/json',
