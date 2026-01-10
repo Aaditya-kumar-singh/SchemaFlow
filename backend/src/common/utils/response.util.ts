@@ -20,7 +20,14 @@ export class ResponseUtil {
             data,
             timestamp: new Date().toISOString(),
         };
-        return NextResponse.json(payload, { status, headers });
+        // Use standard Response to avoid crash in custom server environment
+        return new Response(JSON.stringify(payload), {
+            status,
+            headers: {
+                ...headers,
+                'Content-Type': 'application/json'
+            }
+        });
     }
 
     static error(message: string, status: number = 500, code: string = 'INTERNAL_ERROR', details?: any) {
@@ -33,7 +40,11 @@ export class ResponseUtil {
             },
             timestamp: new Date().toISOString(),
         };
-        return NextResponse.json(payload, { status });
+        // Use standard Response
+        return new Response(JSON.stringify(payload), {
+            status,
+            headers: { 'Content-Type': 'application/json' }
+        });
     }
 
     static handleError(error: unknown) {
