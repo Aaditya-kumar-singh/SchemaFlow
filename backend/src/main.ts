@@ -108,8 +108,15 @@ app.prepare().then(() => {
         ];
 
         // Allow dynamic origin for credentials support if matched
-        if (origin && (allowedOrigins.includes(origin) || origin.endsWith('.pages.dev'))) {
-            res.setHeader('Access-Control-Allow-Origin', origin);
+        if (origin) {
+            if (allowedOrigins.includes(origin) || origin.endsWith('.pages.dev')) {
+                res.setHeader('Access-Control-Allow-Origin', origin);
+            } else {
+                console.log(`⚠️ Blocked CORS origin: ${origin}`);
+            }
+        } else {
+            // For testing tools like Postman that might not send origin, just allow * if needed or ignore
+            // res.setHeader('Access-Control-Allow-Origin', '*'); 
         }
 
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
