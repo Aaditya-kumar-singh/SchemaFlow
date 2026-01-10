@@ -81,13 +81,12 @@ app.prepare().then(() => {
     const server = createServer(async (req, res) => {
         // CORS Configuration
         const origin = req.headers.origin;
-        // Allow all origins for now to facilitate migration/dev, or restrict to specific domains
-        // const allowedOrigins = ['https://your-app.pages.dev', 'http://localhost:3000'];
+        // Allow dynamic origin for credentials support
         if (origin) {
             res.setHeader('Access-Control-Allow-Origin', origin);
         } else {
-            // Fallback for non-browser or same-origin (optional)
-            // res.setHeader('Access-Control-Allow-Origin', '*');
+            // Fallback
+            res.setHeader('Access-Control-Allow-Origin', '*');
         }
 
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
