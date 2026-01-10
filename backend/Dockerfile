@@ -7,11 +7,10 @@
 FROM node:20-alpine AS base
 
 # Install OpenSSL (required for Prisma)
-# Alpine 3.17+ removed libssl1.1, but Prisma 5.10.2 needs it.
-# We add the legacy repository to install it globally for all stages.
-RUN apk add --no-cache openssl \
-    && echo "https://dl-cdn.alpinelinux.org/alpine/v3.15/main" >> /etc/apk/repositories \
-    && apk add --no-cache libssl1.1
+# Install OpenSSL (required for Prisma)
+# Node 20 Alpine uses Alpine 3.18+, which provides OpenSSL 3.
+# This matches our Prisma binaryTarget "linux-musl-openssl-3.0.x"
+RUN apk add --no-cache openssl
 
 # 2. Dependencies
 FROM base AS deps
