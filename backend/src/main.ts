@@ -1,16 +1,27 @@
 const fs = require('fs');
+const path = require('path');
+
+// Try to load .env file if it exists
 try {
-    const envConfig = require('dotenv').parse(fs.readFileSync('.env'));
-    for (const k in envConfig) {
-        process.env[k] = envConfig[k];
+    const envPath = path.join(process.cwd(), '.env');
+    if (fs.existsSync(envPath)) {
+        const envConfig = require('dotenv').parse(fs.readFileSync(envPath));
+        for (const k in envConfig) {
+            process.env[k] = envConfig[k];
+        }
+    } else {
+        // In production/containerized envs, variables are often injected directly, so this is expected.
+        if (process.env.NODE_ENV !== 'production') {
+            console.log('⚠️ No .env file found. relying on system environment variables.');
+        }
     }
 } catch (e) {
-    console.error('Failed to manually load .env', e);
+    console.error('Failed to load .env file', e);
 }
+
 // Global crash handlers
 process.on('uncaughtException', (err) => {
     console.error('🔥 UNCAUGHT EXCEPTION:', err);
-    // Keep it alive to flush logs? No, best to let it restart but Log it first.
 });
 process.on('unhandledRejection', (reason, promise) => {
     console.error('🔥 UNHANDLED REJECTION:', reason);
@@ -35,9 +46,10 @@ console.log(`📍 Environment: ${dev ? 'development' : 'production'}`);
 console.log(`📍 Port: ${port}`);
 
 // Upstash configuration
-const UPSTASH_URL = process.env.UPSTASH_REDIS_REST_URL || "https://precise-oyster-10700.upstash.io";
-const UPSTASH_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN || "ASnMAAIncDI4NDIyYmFjNTk4Y2M0MmUyOGYzZGUyNDU5OTk5NTQ1M3AyMTA3MDA";
+const UPSTASH_URL = process.env.UPSTASH_REDIS_REST_URL;
+const UPSTASH_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
 
+// Initialize Redis/Cache (Logic kept same, just cleaned up vars)
 if (UPSTASH_URL && UPSTASH_TOKEN) {
     console.log('⏳ Connecting to Upstash Redis (HTTP)...');
     try {
@@ -52,17 +64,14 @@ if (UPSTASH_URL && UPSTASH_TOKEN) {
         IdempotencyService.initialize(redis);
     } catch (e) {
         console.error('❌ Failed to initialize Upstash Redis:', e);
-        // Fallback to memory
-        CacheService.initialize();
+        CacheService.initialize(); // Fallback
         IdempotencyService.initialize();
     }
 } else if (process.env.REDIS_URL) {
     console.log('⏳ Connecting to Redis (TCP)...');
     const redis = new Redis(process.env.REDIS_URL, {
         family: 4,
-        tls: {
-            rejectUnauthorized: false
-        }
+        tls: process.env.REDIS_TLS === 'true' ? { rejectUnauthorized: false } : undefined
     });
 
     redis.on('connect', () => console.log('✅ Redis connected'));
@@ -71,7 +80,7 @@ if (UPSTASH_URL && UPSTASH_TOKEN) {
     CacheService.initialize(redis);
     IdempotencyService.initialize(redis);
 } else {
-    console.warn('⚠️ No REDIS_URL found. Using In-Memory stores (not recommended for production).');
+    console.warn('⚠️ No REDIS_URL found. Using In-Memory stores.');
     CacheService.initialize();
     IdempotencyService.initialize();
 }
@@ -87,6 +96,9 @@ app.prepare().then(() => {
     console.log('⏳ Creating HTTP server...');
 
     const server = createServer(async (req, res) => {
+        // Logging for debug
+        console.log(`[${new Date().toISOString()}] ${req.method} ${req.url} from ${req.headers.origin || 'unknown'}`);
+
         // CORS Configuration
         const origin = req.headers.origin;
         const allowedOrigins = [
@@ -98,9 +110,6 @@ app.prepare().then(() => {
         // Allow dynamic origin for credentials support if matched
         if (origin && (allowedOrigins.includes(origin) || origin.endsWith('.pages.dev'))) {
             res.setHeader('Access-Control-Allow-Origin', origin);
-        } else {
-            // Fallback to echo if not strict, or just '*'
-            if (origin) res.setHeader('Access-Control-Allow-Origin', origin);
         }
 
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
