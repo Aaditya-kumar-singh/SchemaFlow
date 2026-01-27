@@ -500,8 +500,8 @@ export default function LandingPage() {
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600">S</div>
                 <div>
-                  <div className="font-bold text-slate-900">Sarah Chen</div>
-                  <div className="text-xs text-slate-500 font-medium">Tech Lead @ Vercel</div>
+                  <div className="font-bold text-slate-900">Nitesh Singh</div>
+                  <div className="text-xs text-slate-500 font-medium">Tech Lead @ Ranko</div>
                 </div>
               </div>
             </div>
@@ -517,8 +517,8 @@ export default function LandingPage() {
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center font-bold text-purple-600">M</div>
                 <div>
-                  <div className="font-bold text-slate-900">Mike Ross</div>
-                  <div className="text-xs text-slate-500 font-medium">Senior Engineer @ Uber</div>
+                  <div className="font-bold text-slate-900">Pinu Adarsh</div>
+                  <div className="text-xs text-slate-500 font-medium">Senior Engineer @ Ranko</div>
                 </div>
               </div>
             </div>
@@ -534,8 +534,8 @@ export default function LandingPage() {
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center font-bold text-green-600">A</div>
                 <div>
-                  <div className="font-bold text-slate-900">Alex Jensen</div>
-                  <div className="text-xs text-slate-500 font-medium">CTO @ StartupX</div>
+                  <div className="font-bold text-slate-900">Vikash Prasad</div>
+                  <div className="text-xs text-slate-500 font-medium">CTO @ Ranko</div>
                 </div>
               </div>
             </div>
@@ -552,8 +552,22 @@ export default function LandingPage() {
             </div>
             <span className="font-bold text-lg text-slate-900">SchemaFlow</span>
           </div>
-          <div className="text-slate-500 text-sm">
-            © 2026 SchemaFlow. Open Source & Proud.
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <div className="text-slate-500 text-sm">
+              © 2026 SchemaFlow. Open Source & Proud.
+            </div>
+            <div className="hidden md:block w-px h-4 bg-slate-200"></div>
+            <a
+              href="https://github.com/aaditya-kumar-singh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/50 transition-all duration-300 hover:shadow-sm"
+            >
+              <span className="text-xs text-slate-500 group-hover:text-blue-600 transition-colors">Crafted by</span>
+              <span className="text-xs font-bold bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-indigo-600">
+                @Aaditya
+              </span>
+            </a>
           </div>
           <div className="flex items-center gap-6">
             <a href="#" className="text-slate-400 hover:text-slate-900 transition-colors"><Github className="w-5 h-5" /></a>
