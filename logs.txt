@@ -1,0 +1,571 @@
+----------------------------------------
+/var/log/docker
+----------------------------------------
+Jan  3 16:05:45 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:05:45.317356036Z" level=info msg="ignoring event" container=6bc77539c2ee88de3df33004f8f78d5fa8e0803966862276e682d7a298c4a244 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:06:45 ip-172-31-1-135 docker[1830]: 2026/01/03 16:06:45 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:06:45 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:06:45.987043624Z" level=info msg="ignoring event" container=6bc77539c2ee88de3df33004f8f78d5fa8e0803966862276e682d7a298c4a244 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:07:46 ip-172-31-1-135 docker[1830]: 2026/01/03 16:07:46 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:07:46 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:07:46.719359532Z" level=info msg="ignoring event" container=6bc77539c2ee88de3df33004f8f78d5fa8e0803966862276e682d7a298c4a244 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:08:47 ip-172-31-1-135 docker[1830]: 2026/01/03 16:08:47 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:08:47 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:08:47.437139229Z" level=info msg="ignoring event" container=6bc77539c2ee88de3df33004f8f78d5fa8e0803966862276e682d7a298c4a244 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:09:47 ip-172-31-1-135 docker[1830]: 2026/01/03 16:09:47 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:09:48 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:09:48.117052799Z" level=info msg="ignoring event" container=6bc77539c2ee88de3df33004f8f78d5fa8e0803966862276e682d7a298c4a244 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:10:48 ip-172-31-1-135 docker[1830]: 2026/01/03 16:10:48 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:10:49 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:10:49.067084269Z" level=info msg="ignoring event" container=6bc77539c2ee88de3df33004f8f78d5fa8e0803966862276e682d7a298c4a244 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:11:49 ip-172-31-1-135 docker[1830]: 2026/01/03 16:11:49 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:11:49 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:11:49.997827126Z" level=info msg="ignoring event" container=6bc77539c2ee88de3df33004f8f78d5fa8e0803966862276e682d7a298c4a244 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:12:51 ip-172-31-1-135 docker[1830]: 2026/01/03 16:12:51 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:12:52 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:12:52.018920555Z" level=info msg="ignoring event" container=6bc77539c2ee88de3df33004f8f78d5fa8e0803966862276e682d7a298c4a244 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:12:59 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:12:59.946205206Z" level=info msg="ignoring event" container=469197aa2d3cdd27bf3191d22b803790d8ebcee000b753e1d054e8dac5e47f29 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:12:59 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:12:59.964714306Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=469197aa2d3cdd27bf3191d22b803790d8ebcee000b753e1d054e8dac5e47f29 daemonShuttingDown=false error="restart canceled" execDuration=11m7.364692866s exitStatus="{0 2026-01-03 16:12:59.920253909 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:13:00 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:13:00.750984591Z" level=info msg="ignoring event" container=5215c9953fdaf655bf7f3c2a2f338fc7409b0cfcd006ca2176b5cd81f09b6f17 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:13:00 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:13:00.768895616Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=5215c9953fdaf655bf7f3c2a2f338fc7409b0cfcd006ca2176b5cd81f09b6f17 daemonShuttingDown=false error="restart canceled" execDuration=11m8.557074533s exitStatus="{0 2026-01-03 16:13:00.718749916 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:13:21 ip-172-31-1-135 docker[1830]: 2026/01/03 16:13:21 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:13:24 ip-172-31-1-135 docker[1830]: 2026/01/03 16:13:24 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:13:24 ip-172-31-1-135 docker[1830]: 2026/01/03 16:13:24 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:13:24 ip-172-31-1-135 docker[1830]: 2026/01/03 16:13:24 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:25:22 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:25:22.540737529Z" level=info msg="ignoring event" container=ad565e0e790c6ddd9093dc914baf22226e7983ee2f669323eb09c6f38662a898 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:25:22 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:25:22.604730725Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=ad565e0e790c6ddd9093dc914baf22226e7983ee2f669323eb09c6f38662a898 daemonShuttingDown=false error="restart canceled" execDuration=11m59.429899077s exitStatus="{0 2026-01-03 16:25:22.491091406 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:25:23 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:25:23.347393291Z" level=info msg="ignoring event" container=b30ad39d0b12f4bbd4e23b0a1dec3c4e6bc8effa11ffc3cafc2a833c6b5e4ba5 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:25:23 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:25:23.369725579Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=b30ad39d0b12f4bbd4e23b0a1dec3c4e6bc8effa11ffc3cafc2a833c6b5e4ba5 daemonShuttingDown=false error="restart canceled" execDuration=12m0.654332544s exitStatus="{0 2026-01-03 16:25:23.300570994 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:25:33 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:25:33.159277801Z" level=info msg="Container failed to exit within 10s of signal 15 - using the force" container=a0db352003e82f8b1aa1d0aba5893937e426fcd37cbbf36266e50516b1f0a98c
+Jan  3 16:25:33 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:25:33.227201127Z" level=info msg="ignoring event" container=a0db352003e82f8b1aa1d0aba5893937e426fcd37cbbf36266e50516b1f0a98c module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:25:33 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:25:33.245169802Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=a0db352003e82f8b1aa1d0aba5893937e426fcd37cbbf36266e50516b1f0a98c daemonShuttingDown=false error="restart canceled" execDuration=12m10.531267367s exitStatus="{137 2026-01-03 16:25:33.179107297 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:25:58 ip-172-31-1-135 docker[1830]: 2026/01/03 16:25:58 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:26:03 ip-172-31-1-135 docker[1830]: 2026/01/03 16:26:03 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:26:03 ip-172-31-1-135 docker[1830]: 2026/01/03 16:26:03 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:26:03 ip-172-31-1-135 docker[1830]: 2026/01/03 16:26:03 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:36:13 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:36:13.557469412Z" level=info msg="ignoring event" container=261e315d55bd404812c0cbc1700d1b05623f990d9d67bedd7f9c0562bd3fde4b module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:36:13 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:36:13.625085201Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=261e315d55bd404812c0cbc1700d1b05623f990d9d67bedd7f9c0562bd3fde4b daemonShuttingDown=false error="restart canceled" execDuration=10m12.772879124s exitStatus="{0 2026-01-03 16:36:13.51507788 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:36:14 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:36:14.337545414Z" level=info msg="ignoring event" container=ce379cf0411410826d01dcd8a1b829cf98a06dd13ba5e5007f81f63cf0e99c18 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:36:14 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:36:14.359000228Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=ce379cf0411410826d01dcd8a1b829cf98a06dd13ba5e5007f81f63cf0e99c18 daemonShuttingDown=false error="restart canceled" execDuration=10m14.361046621s exitStatus="{0 2026-01-03 16:36:14.282433671 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:36:24 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:36:24.166216254Z" level=info msg="Container failed to exit within 10s of signal 15 - using the force" container=48d2d142689ab6aeae2bdee2210d4774a9ff33793e336c91bd3495e116eb842f
+Jan  3 16:36:24 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:36:24.229425292Z" level=info msg="ignoring event" container=48d2d142689ab6aeae2bdee2210d4774a9ff33793e336c91bd3495e116eb842f module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:36:24 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:36:24.252908808Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=48d2d142689ab6aeae2bdee2210d4774a9ff33793e336c91bd3495e116eb842f daemonShuttingDown=false error="restart canceled" execDuration=10m24.261691329s exitStatus="{137 2026-01-03 16:36:24.20541106 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:36:43 ip-172-31-1-135 docker[1830]: 2026/01/03 16:36:43 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:36:46 ip-172-31-1-135 docker[1830]: 2026/01/03 16:36:46 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:36:46 ip-172-31-1-135 docker[1830]: 2026/01/03 16:36:46 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:36:46 ip-172-31-1-135 docker[1830]: 2026/01/03 16:36:46 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:48:13 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:48:13.832011369Z" level=info msg="ignoring event" container=8b6a12a472f6581ce98caadd8f6601257570c7efdb1b6ff4c902b8aea1dda929 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:48:13 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:48:13.908087399Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=8b6a12a472f6581ce98caadd8f6601257570c7efdb1b6ff4c902b8aea1dda929 daemonShuttingDown=false error="restart canceled" execDuration=11m28.432677497s exitStatus="{0 2026-01-03 16:48:13.784323121 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:48:14 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:48:14.789003987Z" level=info msg="ignoring event" container=d2c9cbf9839dea8a1f9a35bf8782400597fd669ef9d52966ea09fa7d1e6cd81c module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:48:14 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:48:14.812151891Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=d2c9cbf9839dea8a1f9a35bf8782400597fd669ef9d52966ea09fa7d1e6cd81c daemonShuttingDown=false error="restart canceled" execDuration=11m29.794988248s exitStatus="{0 2026-01-03 16:48:14.720935546 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:48:24 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:48:24.523855242Z" level=info msg="Container failed to exit within 10s of signal 15 - using the force" container=686eb19bb5919f2c54e705d965dc0e42a92871ecd3ff732574d04ee3cb9d7b27
+Jan  3 16:48:24 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:48:24.587282176Z" level=info msg="ignoring event" container=686eb19bb5919f2c54e705d965dc0e42a92871ecd3ff732574d04ee3cb9d7b27 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:48:24 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:48:24.611527135Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=686eb19bb5919f2c54e705d965dc0e42a92871ecd3ff732574d04ee3cb9d7b27 daemonShuttingDown=false error="restart canceled" execDuration=11m39.559915012s exitStatus="{137 2026-01-03 16:48:24.557335549 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:48:44 ip-172-31-1-135 docker[1830]: 2026/01/03 16:48:44 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:48:47 ip-172-31-1-135 docker[1830]: 2026/01/03 16:48:47 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:48:47 ip-172-31-1-135 docker[1830]: 2026/01/03 16:48:47 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:48:47 ip-172-31-1-135 docker[1830]: 2026/01/03 16:48:47 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 16:59:36 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:59:36.998962601Z" level=info msg="ignoring event" container=59f99cc0113f51026ebd60bdeb5a46daae0a929117858cd7f5fa235a357dc1ca module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:59:37 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:59:37.074956694Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=59f99cc0113f51026ebd60bdeb5a46daae0a929117858cd7f5fa235a357dc1ca daemonShuttingDown=false error="restart canceled" execDuration=10m50.849805467s exitStatus="{0 2026-01-03 16:59:36.954091676 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:59:37 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:59:37.757731811Z" level=info msg="ignoring event" container=aa25036d6ba72c4745d76594d156f3db35339e27398e636a26b06ccdf0b8ac02 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:59:37 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:59:37.776511703Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=aa25036d6ba72c4745d76594d156f3db35339e27398e636a26b06ccdf0b8ac02 daemonShuttingDown=false error="restart canceled" execDuration=10m51.963357191s exitStatus="{0 2026-01-03 16:59:37.718462335 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 16:59:47 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:59:47.584891907Z" level=info msg="Container failed to exit within 10s of signal 15 - using the force" container=edb9a5b8852452ed4324dea74edb8c209dc8bd97dd96b119816117a4dc8fdaa4
+Jan  3 16:59:47 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:59:47.647169501Z" level=info msg="ignoring event" container=edb9a5b8852452ed4324dea74edb8c209dc8bd97dd96b119816117a4dc8fdaa4 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 16:59:47 ip-172-31-1-135 docker[1830]: time="2026-01-03T16:59:47.666251598Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=edb9a5b8852452ed4324dea74edb8c209dc8bd97dd96b119816117a4dc8fdaa4 daemonShuttingDown=false error="restart canceled" execDuration=11m1.908671842s exitStatus="{137 2026-01-03 16:59:47.617772875 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 17:00:13 ip-172-31-1-135 docker[1830]: 2026/01/03 17:00:13 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:00:15 ip-172-31-1-135 docker[1830]: 2026/01/03 17:00:15 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:00:15 ip-172-31-1-135 docker[1830]: 2026/01/03 17:00:15 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:00:15 ip-172-31-1-135 docker[1830]: 2026/01/03 17:00:15 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:25:52 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:25:52.577023137Z" level=info msg="ignoring event" container=6ccb313a2b653bcf2d1fdbde655fd3eb3173ee2829e02029d3805bcb508fa6c6 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 17:25:52 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:25:52.643584647Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=6ccb313a2b653bcf2d1fdbde655fd3eb3173ee2829e02029d3805bcb508fa6c6 daemonShuttingDown=false error="restart canceled" execDuration=25m38.11038992s exitStatus="{0 2026-01-03 17:25:52.513816373 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 17:25:53 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:25:53.412068668Z" level=info msg="ignoring event" container=0440723dbd4308cc14463cb6c93fb55ff24fc19e8d562b98c07c0b3fc5dddcb7 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 17:25:53 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:25:53.431990121Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=0440723dbd4308cc14463cb6c93fb55ff24fc19e8d562b98c07c0b3fc5dddcb7 daemonShuttingDown=false error="restart canceled" execDuration=25m39.274157385s exitStatus="{0 2026-01-03 17:25:53.38120311 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 17:26:03 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:26:03.171459913Z" level=info msg="Container failed to exit within 10s of signal 15 - using the force" container=dfb7ae8ef0abb8261818bfe514ecba3e99ae918c8c94a2f711ec1d9b6ecf6734
+Jan  3 17:26:03 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:26:03.255250629Z" level=info msg="ignoring event" container=dfb7ae8ef0abb8261818bfe514ecba3e99ae918c8c94a2f711ec1d9b6ecf6734 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 17:26:03 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:26:03.280495737Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=dfb7ae8ef0abb8261818bfe514ecba3e99ae918c8c94a2f711ec1d9b6ecf6734 daemonShuttingDown=false error="restart canceled" execDuration=25m49.101692232s exitStatus="{137 2026-01-03 17:26:03.228455168 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 17:26:23 ip-172-31-1-135 docker[1830]: 2026/01/03 17:26:23 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:26:27 ip-172-31-1-135 docker[1830]: 2026/01/03 17:26:27 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:26:27 ip-172-31-1-135 docker[1830]: 2026/01/03 17:26:27 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:26:27 ip-172-31-1-135 docker[1830]: 2026/01/03 17:26:27 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:35:27 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:35:27.466958132Z" level=info msg="ignoring event" container=110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 17:35:27 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:35:27.532461381Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18 daemonShuttingDown=false error="restart canceled" execDuration=9m1.969905865s exitStatus="{0 2026-01-03 17:35:27.422342624 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 17:35:28 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:35:28.237307299Z" level=info msg="ignoring event" container=484df0982ac54ee5e8b244cc443d54c90fa1760707298df9cded726a5c903f5c module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 17:35:28 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:35:28.259286887Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=484df0982ac54ee5e8b244cc443d54c90fa1760707298df9cded726a5c903f5c daemonShuttingDown=false error="restart canceled" execDuration=9m3.102935325s exitStatus="{0 2026-01-03 17:35:28.207273044 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 17:35:38 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:35:38.067165400Z" level=info msg="Container failed to exit within 10s of signal 15 - using the force" container=c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280
+Jan  3 17:35:38 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:35:38.127408980Z" level=info msg="ignoring event" container=c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 17:35:38 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:35:38.146198228Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280 daemonShuttingDown=false error="restart canceled" execDuration=9m12.987048653s exitStatus="{137 2026-01-03 17:35:38.087341432 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 17:36:06 ip-172-31-1-135 docker[1830]: 2026/01/03 17:36:06 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:36:09 ip-172-31-1-135 docker[1830]: 2026/01/03 17:36:09 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:36:09 ip-172-31-1-135 docker[1830]: 2026/01/03 17:36:09 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:36:09 ip-172-31-1-135 docker[1830]: 2026/01/03 17:36:09 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:44:36 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:44:36.620866221Z" level=info msg="ignoring event" container=1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0 module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 17:44:36 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:44:36.692155127Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0 daemonShuttingDown=false error="restart canceled" execDuration=8m28.768835651s exitStatus="{0 2026-01-03 17:44:36.572927977 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 17:44:37 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:44:37.466959103Z" level=info msg="ignoring event" container=41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 17:44:37 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:44:37.483889842Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b daemonShuttingDown=false error="restart canceled" execDuration=8m30.036275638s exitStatus="{0 2026-01-03 17:44:37.422183957 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 17:44:47 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:44:47.271224902Z" level=info msg="Container failed to exit within 10s of signal 15 - using the force" container=eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d
+Jan  3 17:44:47 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:44:47.327065688Z" level=info msg="ignoring event" container=eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Jan  3 17:44:47 ip-172-31-1-135 docker[1830]: time="2026-01-03T17:44:47.344955927Z" level=warning msg="ShouldRestart failed, container will not be restarted" container=eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d daemonShuttingDown=false error="restart canceled" execDuration=8m39.905646183s exitStatus="{137 2026-01-03 17:44:47.291599689 +0000 UTC}" hasBeenManuallyStopped=true restartCount=0
+Jan  3 17:45:07 ip-172-31-1-135 docker[1830]: 2026/01/03 17:45:07 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:45:10 ip-172-31-1-135 docker[1830]: 2026/01/03 17:45:10 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:45:10 ip-172-31-1-135 docker[1830]: 2026/01/03 17:45:10 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+Jan  3 17:45:10 ip-172-31-1-135 docker[1830]: 2026/01/03 17:45:10 http: superfluous response.WriteHeader call from go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp.(*respWriterWrapper).WriteHeader (wrap.go:98)
+
+
+----------------------------------------
+/var/log/eb-engine.log
+----------------------------------------
+2026/01/03 17:45:09.604194 [INFO] Running command: systemctl enable eb-docker-compose-log.service
+2026/01/03 17:45:09.948765 [INFO] The unit files have no installation config (WantedBy=, RequiredBy=, Also=,
+Alias= settings in the [Install] section, and DefaultInstance= for template
+units). This means they are not meant to be enabled using systemctl.
+ 
+Possible reasons for having this kind of units are:
+â€¢ A unit may be statically enabled by being symlinked from another unit's
+  .wants/ or .requires/ directory.
+â€¢ A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+â€¢ A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+â€¢ In case of template units, the unit is meant to be enabled with some
+  instance name specified.
+
+2026/01/03 17:45:09.948798 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-log.service
+2026/01/03 17:45:09.964572 [INFO] Running command: systemctl is-active eb-docker-compose-log.service
+2026/01/03 17:45:09.976823 [INFO] Running command: systemctl start eb-docker-compose-log.service
+2026/01/03 17:45:10.051797 [INFO] Running command: docker compose ps -q
+2026/01/03 17:45:10.327636 [INFO] 6a3c5b7d526c964d987ad7d0de9b6f6836673c733d4f4c596c60c1de60669db4
+82c649ed28e381699529c219271b5f1faf9a54a9a3931574d574f551467587a8
+b36a113e73eb91c689aa0bf1fa798cdcb76a563b6955d21f9c83af85ce8bebf4
+
+2026/01/03 17:45:10.328281 [INFO] time="2026-01-03T17:45:10Z" level=warning msg="The \"JWT_SECRET\" variable is not set. Defaulting to a blank string."
+
+2026/01/03 17:45:10.330853 [INFO] Cleanup images ...
+2026/01/03 17:45:10.330872 [INFO] Running command: docker images -a
+2026/01/03 17:45:10.367969 [INFO] REPOSITORY                                        TAG       IMAGE ID       CREATED          SIZE
+ghcr.io/aaditya-kumar-singh/schemaflow-backend    latest    e790fef85276   2 minutes ago    876MB
+ghcr.io/aaditya-kumar-singh/schemaflow-frontend   latest    43ab1f3b0f7d   3 minutes ago    213MB
+ghcr.io/aaditya-kumar-singh/schemaflow-backend    <none>    f31b57e6f04a   11 minutes ago   876MB
+ghcr.io/aaditya-kumar-singh/schemaflow-frontend   <none>    0bbf56a80a51   12 minutes ago   213MB
+nginx                                             alpine    04da2b0513cd   2 weeks ago      53.7MB
+
+2026/01/03 17:45:10.367998 [INFO] Running command: docker rmi `docker images -aq`
+2026/01/03 17:45:12.053961 [INFO] Untagged: ghcr.io/aaditya-kumar-singh/schemaflow-backend@sha256:2ed19537aae1983b1c6f305985174f7cade15a3a678d6ab639c29244d6211239
+Deleted: sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb
+Deleted: sha256:e7df4af5a67bcaef1be052902912e3146d1489c52998fb94f02fe755080abf3d
+Deleted: sha256:9779726d3f543c3983cfd31861062ad583b1e9bc3f0822f014b10379c998c44a
+Deleted: sha256:798a71efb2cc43751c3b9d2ea16c2371418cc6ee02dd74b4c15cef2509294a70
+Deleted: sha256:89875792ccfb5bc0be6b77cd1663112a15c7fde2a68ab121c199f6483ad93309
+Deleted: sha256:3ee6781f3e73c127c279c4ad0e09ec8a2bfdfbff52c6459de2f80657dc7449a2
+Deleted: sha256:7715a604163269bd6d4f5f38f76e7e25e96ff11ea25db0658a236f554dfcd66f
+Deleted: sha256:6799a5fc5b8ca7cc8da10bb64185dbc772bdf275816eaf36d3b0f0f595925de5
+Deleted: sha256:9af92f71ec12c9ba4c403cea98c089cfcc275454d3830945c6dc7ec10125ace1
+Untagged: ghcr.io/aaditya-kumar-singh/schemaflow-frontend@sha256:7ad4c7535b9d2e494482d8fad6132c1e0469b5d398b0f731aa1faf018c795c95
+Deleted: sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5
+Deleted: sha256:e02a06c690ed2104474cc95cc6e002a5ccd54bf8dcb5447e040ec8e13349a367
+Deleted: sha256:f6dfb7d9a36dd226b9a6e3aeb56d1512bc7c8fd4c7eec4ca4777325752a4508d
+Deleted: sha256:2ff27ca5e7b8157c859ce1cb7e6cc4a86566637177bd45d75661b6d3d6014efe
+Deleted: sha256:a45578b2b85d9b518e59ec30696c83df921628bd79cecd8562af29b361e09bf5
+Deleted: sha256:4b41660a2820754276d5aa376c548622f1152771f3c2c6f3f5eb30d2e5810957
+Deleted: sha256:f81d0c6cf2c5e057828858cf63d61c807f47561f44b553dccf061874a1116740
+
+2026/01/03 17:45:12.054461 [INFO] Error response from daemon: conflict: unable to delete e790fef85276 (cannot be forced) - image is being used by running container 6a3c5b7d526c
+Error response from daemon: conflict: unable to delete 43ab1f3b0f7d (cannot be forced) - image is being used by running container 82c649ed28e3
+Error response from daemon: conflict: unable to delete 04da2b0513cd (cannot be forced) - image is being used by running container b36a113e73eb
+
+2026/01/03 17:45:12.054476 [INFO] Running command: docker images -a
+2026/01/03 17:45:12.101467 [INFO] REPOSITORY                                        TAG       IMAGE ID       CREATED         SIZE
+ghcr.io/aaditya-kumar-singh/schemaflow-backend    latest    e790fef85276   2 minutes ago   876MB
+ghcr.io/aaditya-kumar-singh/schemaflow-frontend   latest    43ab1f3b0f7d   3 minutes ago   213MB
+nginx                                             alpine    04da2b0513cd   2 weeks ago     53.7MB
+
+2026/01/03 17:45:12.102081 [INFO] Pruning build cache ...
+2026/01/03 17:45:12.102098 [INFO] Running command: docker builder prune -f
+2026/01/03 17:45:12.683359 [INFO] Total:	0B
+
+2026/01/03 17:45:12.684412 [INFO] Executing instruction: start X-Ray
+2026/01/03 17:45:12.686323 [INFO] X-Ray is not enabled.
+2026/01/03 17:45:12.686334 [INFO] Executing instruction: configureSqsd
+2026/01/03 17:45:12.687966 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2026/01/03 17:45:12.687980 [INFO] Executing instruction: startSqsd
+2026/01/03 17:45:12.687983 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2026/01/03 17:45:12.687986 [INFO] Executing instruction: Track pids in healthd
+2026/01/03 17:45:12.688716 [INFO] This is basic health env, skipping tracking pid in healthd...
+2026/01/03 17:45:12.688721 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2026/01/03 17:45:12.690228 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2026/01/03 17:45:12.691071 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2026/01/03 17:45:12.691079 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2026/01/03 17:45:12.691091 [INFO] Executing cleanup logic
+2026/01/03 17:45:12.713993 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment completed successfully.","timestamp":1767462312693,"severity":"INFO"}]}]}
+
+2026/01/03 17:45:12.714044 [INFO] Platform Engine finished execution on command: app-deploy
+
+2026/01/03 17:50:53.184939 [INFO] Starting...
+2026/01/03 17:50:53.185539 [INFO] Starting EBPlatform-PlatformEngine
+2026/01/03 17:50:53.185573 [INFO] reading event message file
+2026/01/03 17:50:53.197184 [INFO] Engine received EB command cfn-hup-exec
+
+2026/01/03 17:50:53.367994 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-southeast-2:567207910627:stack/awseb-e-u9hye6kymm-stack/aaef15e0-e8b7-11f0-8fc2-0a883c19aac1 -r AWSEBAutoScalingGroup --region ap-southeast-2
+2026/01/03 17:50:53.953478 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-southeast-2:567207910627:stack/awseb-e-u9hye6kymm-stack/aaef15e0-e8b7-11f0-8fc2-0a883c19aac1 -r AWSEBBeanstalkMetadata --region ap-southeast-2
+2026/01/03 17:50:54.259454 [INFO] checking whether command tail-log is applicable to this instance...
+2026/01/03 17:50:54.259469 [INFO] this command is applicable to the instance, thus instance should execute command
+2026/01/03 17:50:54.259472 [INFO] Engine command: (tail-log)
+
+2026/01/03 17:50:54.260632 [INFO] Executing instruction: GetTailLogs
+2026/01/03 17:50:54.260644 [INFO] Tail Logs...
+2026/01/03 17:50:54.268183 [INFO] Running command: tail -n 100 /var/log/docker
+2026/01/03 17:50:54.273050 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
+
+
+----------------------------------------
+/var/log/eb-hooks.log
+----------------------------------------
+2026/01/03 15:21:46.501794 [INFO] Running command: .platform/hooks/prebuild/01_swap.sh
+2026/01/03 15:22:10.196169 [INFO] Creating 3072 MB swap file at /var/swap.1...
+Setting up swapspace version 1, size = 3 GiB (3221221376 bytes)
+no label, UUID=bf01a93e-0e65-43ba-bdca-886a571d7c33
+Swap created and enabled.
+
+2026/01/03 15:22:10.196574 [INFO] 3072+0 records in
+3072+0 records out
+3221225472 bytes (3.2 GB, 3.0 GiB) copied, 22.959 s, 140 MB/s
+mkswap: /var/swap.1: insecure permissions 0644, fix with: chmod 0600 /var/swap.1
+swapon: /var/swap.1: insecure permissions 0644, 0600 suggested.
+
+2026/01/03 15:30:12.114021 [INFO] Running command: .platform/hooks/prebuild/01_swap.sh
+2026/01/03 15:30:12.116597 [INFO] Swap file /var/swap.1 already exists. Skipping.
+
+2026/01/03 16:00:39.121288 [INFO] Running command: .platform/hooks/prebuild/01_swap.sh
+2026/01/03 16:00:39.123172 [INFO] Swap file /var/swap.1 already exists. Skipping.
+
+2026/01/03 16:10:32.911704 [INFO] Running command: .platform/hooks/prebuild/01_swap.sh
+2026/01/03 16:10:32.913701 [INFO] Swap file /var/swap.1 already exists. Skipping.
+
+2026/01/03 16:24:50.613771 [INFO] Running command: .platform/hooks/prebuild/01_swap.sh
+2026/01/03 16:24:50.615828 [INFO] Swap file /var/swap.1 already exists. Skipping.
+
+2026/01/03 16:35:09.965976 [INFO] Running command: .platform/hooks/prebuild/01_swap.sh
+2026/01/03 16:35:09.967907 [INFO] Swap file /var/swap.1 already exists. Skipping.
+
+2026/01/03 16:47:41.084433 [INFO] Running command: .platform/hooks/prebuild/01_swap.sh
+2026/01/03 16:47:41.086553 [INFO] Swap file /var/swap.1 already exists. Skipping.
+
+2026/01/03 16:59:06.273723 [INFO] Running command: .platform/hooks/prebuild/01_swap.sh
+2026/01/03 16:59:06.275868 [INFO] Swap file /var/swap.1 already exists. Skipping.
+
+2026/01/03 17:25:21.815710 [INFO] Running command: .platform/hooks/prebuild/01_swap.sh
+2026/01/03 17:25:21.818113 [INFO] Swap file /var/swap.1 already exists. Skipping.
+
+2026/01/03 17:34:57.743265 [INFO] Running command: .platform/hooks/prebuild/01_swap.sh
+2026/01/03 17:34:57.745757 [INFO] Swap file /var/swap.1 already exists. Skipping.
+
+2026/01/03 17:44:07.069656 [INFO] Running command: .platform/hooks/prebuild/01_swap.sh
+2026/01/03 17:44:07.072167 [INFO] Swap file /var/swap.1 already exists. Skipping.
+
+
+
+----------------------------------------
+/var/log/eb-docker/containers/eb-current-app/eb-stdouterr.log
+----------------------------------------
+backend-1  |     at Module._load (node:internal/modules/cjs/loader:1091:12)
+backend-1  |     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+backend-1  |     at node:internal/main/run_main_module:28:49 {
+backend-1  |   errno: -2,
+backend-1  |   code: 'ENOENT',
+backend-1  |   syscall: 'open',
+backend-1  |   path: '.env'
+backend-1  | }
+backend-1  | ðŸš€ Starting SchemaFlow Backend...
+backend-1  | ðŸ“ Environment: production
+backend-1  | ðŸ“ Port: 3002
+backend-1  | â³ Connecting to Upstash Redis (HTTP)...
+backend-1  | âœ… Upstash Redis (HTTP) configured
+backend-1  | 2026-01-03 17:45:09 [INFO]: CACHE_INITIALIZED {"type":"ioredis"}
+backend-1  | 2026-01-03 17:45:09 [INFO]: IDEMPOTENCY_INITIALIZED {"store":"ioredis"}
+backend-1  | â³ Initializing Next.js...
+proxy-1    | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+proxy-1    | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+proxy-1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+proxy-1    | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+proxy-1    | 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf differs from the packaged version
+proxy-1    | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+proxy-1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+proxy-1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+proxy-1    | /docker-entrypoint.sh: Configuration complete; ready for start up
+proxy-1    | 2026/01/03 17:45:09 [notice] 1#1: using the "epoll" event method
+proxy-1    | 2026/01/03 17:45:09 [notice] 1#1: nginx/1.29.4
+proxy-1    | 2026/01/03 17:45:09 [notice] 1#1: built by gcc 15.2.0 (Alpine 15.2.0) 
+proxy-1    | 2026/01/03 17:45:09 [notice] 1#1: OS: Linux 6.1.158-180.294.amzn2023.x86_64
+proxy-1    | 2026/01/03 17:45:09 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 32768:65536
+proxy-1    | 2026/01/03 17:45:09 [notice] 1#1: start worker processes
+proxy-1    | 2026/01/03 17:45:09 [notice] 1#1: start worker process 30
+proxy-1    | 2026/01/03 17:45:09 [notice] 1#1: start worker process 31
+frontend-1  | â–² Next.js 16.1.1
+frontend-1  | - Local:         http://82c649ed28e3:3000
+frontend-1  | - Network:       http://82c649ed28e3:3000
+frontend-1  | 
+frontend-1  | âœ“ Starting...
+frontend-1  | âœ“ Ready in 365ms
+backend-1   | âœ… Next.js ready
+backend-1   | â³ Creating HTTP server...
+backend-1   | â³ Initializing Socket.IO...
+backend-1   | âœ… Socket.IO ready
+backend-1   | 
+backend-1   | ðŸŽ‰ ================================
+backend-1   | âœ… Server ready on http://0.0.0.0:3002
+backend-1   | âœ… Socket.IO ready on /api/socket/io
+backend-1   | ðŸŽ‰ ================================
+backend-1   | 
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:39 +0000] "GET / HTTP/1.1" 200 56968 "-" "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.2623.112 Safari/537.36" "-"
+proxy-1     | 2026/01/03 17:45:39 [warn] 30#30: *3 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 168.76.20.229, server: , request: "GET /favicon.ico?favicon.227aadde.ico HTTP/1.1", upstream: "http://172.28.0.3:3000/favicon.ico?favicon.227aadde.ico", host: "52.64.201.225:80"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:40 +0000] "GET /favicon.ico?favicon.227aadde.ico HTTP/1.1" 200 452029 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 2026/01/03 17:45:40 [warn] 31#31: *5 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/2/00/0000000002 while reading upstream, client: 168.76.20.229, server: , request: "GET /icon.png?icon.227aadde.png HTTP/1.1", upstream: "http://172.28.0.3:3000/icon.png?icon.227aadde.png", host: "52.64.201.225:80"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:41 +0000] "GET /icon.png?icon.227aadde.png HTTP/1.1" 200 459786 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:41 +0000] "GET / HTTP/1.1" 200 10076 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 2026/01/03 17:45:42 [warn] 31#31: *9 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/3/00/0000000003 while reading upstream, client: 168.76.20.229, server: , request: "GET /favicon.ico?favicon.227aadde.ico HTTP/1.1", upstream: "http://172.28.0.3:3000/favicon.ico?favicon.227aadde.ico", host: "52.64.201.225:80"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:43 +0000] "GET /favicon.ico?favicon.227aadde.ico HTTP/1.1" 200 452029 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 2026/01/03 17:45:44 [warn] 31#31: *11 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/4/00/0000000004 while reading upstream, client: 168.76.20.229, server: , request: "GET /icon.png?icon.227aadde.png HTTP/1.1", upstream: "http://172.28.0.3:3000/icon.png?icon.227aadde.png", host: "52.64.201.225:80"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:44 +0000] "GET /icon.png?icon.227aadde.png HTTP/1.1" 200 459786 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 2026/01/03 17:45:45 [warn] 31#31: *13 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/5/00/0000000005 while reading upstream, client: 168.76.20.229, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://172.28.0.3:3000/favicon.ico", host: "52.64.201.225:80"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:45 +0000] "GET /favicon.ico HTTP/1.1" 200 452029 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:46 +0000] "GET /robots.txt HTTP/1.1" 404 3302 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:46 +0000] "GET /_next/static/chunks/dce1ee0e89ee93db.js HTTP/1.1" 200 8951 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:46 +0000] "GET /_next/static/chunks/3e200bca904262de.js HTTP/1.1" 200 30579 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:47 +0000] "GET /_next/static/chunks/cc759f7c2413b7ff.js HTTP/1.1" 200 70222 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:47 +0000] "GET /_next/static/chunks/turbopack-671d962e0205d954.js HTTP/1.1" 200 4032 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:48 +0000] "GET /_next/static/chunks/c08da83f76a2a138.js HTTP/1.1" 200 3639 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:48 +0000] "GET /_next/static/chunks/337602a7f5ee9cb4.js HTTP/1.1" 200 8985 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:48 +0000] "GET /_next/static/chunks/d0538aa69dfe5812.js HTTP/1.1" 200 9627 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:48 +0000] "GET /_next/static/chunks/ff1a16fafef87110.js HTTP/1.1" 200 282 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:49 +0000] "GET /_next/static/chunks/7340adf74ff47ec0.js HTTP/1.1" 200 7463 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:49 +0000] "GET /_next/static/chunks/f15de228eba5304b.js HTTP/1.1" 200 4544 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:49 +0000] "GET /_next/static/chunks/e0e2e371c2f982cd.js HTTP/1.1" 200 9466 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:49 +0000] "GET /_next/static/chunks/6cf66fa4e8fe27cd.js HTTP/1.1" 200 18880 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:50 +0000] "GET /_next/static/chunks/3ab8bf747e09b97e.js HTTP/1.1" 200 9712 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:50 +0000] "GET /_next/static/chunks/a6dad97d9634a72d.js HTTP/1.1" 200 39685 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 168.76.20.229 - - [03/Jan/2026:17:45:50 +0000] "GET /_next/static/chunks/8935ac2e1cb95749.js HTTP/1.1" 200 7154 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:48 +0000] "GET / HTTP/1.1" 200 10076 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:49 +0000] "GET /_next/static/chunks/942b354e7033a781.css HTTP/1.1" 200 15477 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:50 +0000] "GET /login?_rsc=1r34m HTTP/1.1" 200 343 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:50 +0000] "GET /price?_rsc=1r34m HTTP/1.1" 200 343 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:50 +0000] "GET /login?_rsc=1pn8p HTTP/1.1" 200 559 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:50 +0000] "GET /login?_rsc=nn07o HTTP/1.1" 200 1142 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:50 +0000] "GET /login?_rsc=1tdii HTTP/1.1" 200 276 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:50 +0000] "GET /login?_rsc=9gbhl HTTP/1.1" 200 524 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:50 +0000] "GET /price?_rsc=1pn8p HTTP/1.1" 200 559 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:50 +0000] "GET /price?_rsc=3self HTTP/1.1" 200 276 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:50 +0000] "GET /price?_rsc=1hyc0 HTTP/1.1" 200 499 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 2026/01/03 17:49:51 [warn] 30#30: *47 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/6/00/0000000006 while reading upstream, client: 112.196.23.6, server: , request: "GET /logo.png HTTP/1.1", upstream: "http://172.28.0.3:3000/logo.png", host: "schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com", referrer: "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/login"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:51 +0000] "GET /register?_rsc=17yrj HTTP/1.1" 200 343 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:55 +0000] "GET /logo.png HTTP/1.1" 200 459716 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:55 +0000] "GET /register?_rsc=rnjqr HTTP/1.1" 200 524 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:56 +0000] "GET /register?_rsc=m8m8p HTTP/1.1" 200 559 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:49:56 +0000] "GET /register?_rsc=l7ymg HTTP/1.1" 200 276 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+backend-1   | [LOGIN DEBUG] Checking password for kumaraaditya324@gmail.com
+backend-1   | [LOGIN DEBUG] Match Result: false
+backend-1   | [LOGIN ERROR] Password mismatch for kumaraaditya324@gmail.com
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:50:02 +0000] "POST /api/v1/auth/login HTTP/1.1" 401 137 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+proxy-1     | 2026/01/03 17:50:12 [warn] 30#30: *47 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/7/00/0000000007 while reading upstream, client: 112.196.23.6, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://172.28.0.3:3000/favicon.ico", host: "schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com", referrer: "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/login"
+proxy-1     | 112.196.23.6 - - [03/Jan/2026:17:50:14 +0000] "GET /favicon.ico HTTP/1.1" 200 452100 "http://schemaflow-env-1.eba-dr8wkx3v.ap-southeast-2.elasticbeanstalk.com/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" "-"
+
+
+----------------------------------------
+/var/log/docker-events.log
+----------------------------------------
+2026-01-03T17:26:23.971899531Z container create c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280 (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:d4c5187cceeaf8ce5d5a426c58dd6c859ad1ec3efb563d9bfee2b482981a1e48, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:26:24.007962733Z container create 110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=backend:service_started:false,frontend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:26:24.161507181Z network connect 5151c6d9a5024d37eb18635b1b6a112f734600ade2c9763e65d3f172b4673e44 (container=484df0982ac54ee5e8b244cc443d54c90fa1760707298df9cded726a5c903f5c, name=current_default, type=bridge)
+2026-01-03T17:26:24.200120742Z network connect 5151c6d9a5024d37eb18635b1b6a112f734600ade2c9763e65d3f172b4673e44 (container=c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280, name=current_default, type=bridge)
+2026-01-03T17:26:25.161105832Z container start 484df0982ac54ee5e8b244cc443d54c90fa1760707298df9cded726a5c903f5c (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:5c1e82c76da40ba9d65964a91cfa13b903256dfe59a42c5580d7864598851391, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+2026-01-03T17:26:25.164634690Z container start c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280 (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:d4c5187cceeaf8ce5d5a426c58dd6c859ad1ec3efb563d9bfee2b482981a1e48, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:26:25.222228785Z network connect 5151c6d9a5024d37eb18635b1b6a112f734600ade2c9763e65d3f172b4673e44 (container=110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18, name=current_default, type=bridge)
+2026-01-03T17:26:25.567891929Z container start 110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=backend:service_started:false,frontend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:26:27.098892050Z image untag sha256:3c60904c0f605ad33d21c2845d529b268f31595de709f35fdd27b57b33602653 (name=sha256:3c60904c0f605ad33d21c2845d529b268f31595de709f35fdd27b57b33602653)
+2026-01-03T17:26:28.653441975Z image delete sha256:3c60904c0f605ad33d21c2845d529b268f31595de709f35fdd27b57b33602653 (name=sha256:3c60904c0f605ad33d21c2845d529b268f31595de709f35fdd27b57b33602653)
+2026-01-03T17:26:28.708325038Z image untag sha256:db5d120fcd940f22be9f0615584d1e0fb032165000881fe7dd96f80aeda04171 (name=sha256:db5d120fcd940f22be9f0615584d1e0fb032165000881fe7dd96f80aeda04171)
+2026-01-03T17:26:28.856835552Z image delete sha256:db5d120fcd940f22be9f0615584d1e0fb032165000881fe7dd96f80aeda04171 (name=sha256:db5d120fcd940f22be9f0615584d1e0fb032165000881fe7dd96f80aeda04171)
+2026-01-03T17:34:57.565788100Z container prune  (reclaimed=0)
+2026-01-03T17:34:59.861638642Z image pull nginx:alpine (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=nginx)
+2026-01-03T17:35:05.260096950Z image pull ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest (name=ghcr.io/aaditya-kumar-singh/schemaflow-frontend)
+2026-01-03T17:35:23.232055963Z image pull ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest (name=ghcr.io/aaditya-kumar-singh/schemaflow-backend)
+2026-01-03T17:35:27.306757886Z container kill 110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=backend:service_started:false,frontend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1, signal=3)
+2026-01-03T17:35:27.964536294Z network disconnect 5151c6d9a5024d37eb18635b1b6a112f734600ade2c9763e65d3f172b4673e44 (container=110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18, name=current_default, type=bridge)
+2026-01-03T17:35:28.028932873Z container stop 110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=backend:service_started:false,frontend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:35:28.034595675Z container die 110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=backend:service_started:false,frontend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, execDuration=541, exitCode=0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:35:28.047369408Z container destroy 110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=backend:service_started:false,frontend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:35:28.065095187Z container kill c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280 (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:d4c5187cceeaf8ce5d5a426c58dd6c859ad1ec3efb563d9bfee2b482981a1e48, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1, signal=15)
+2026-01-03T17:35:28.075209377Z container kill 484df0982ac54ee5e8b244cc443d54c90fa1760707298df9cded726a5c903f5c (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:5c1e82c76da40ba9d65964a91cfa13b903256dfe59a42c5580d7864598851391, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1, signal=15)
+2026-01-03T17:35:28.630672161Z network disconnect 5151c6d9a5024d37eb18635b1b6a112f734600ade2c9763e65d3f172b4673e44 (container=484df0982ac54ee5e8b244cc443d54c90fa1760707298df9cded726a5c903f5c, name=current_default, type=bridge)
+2026-01-03T17:35:28.636437169Z container stop 484df0982ac54ee5e8b244cc443d54c90fa1760707298df9cded726a5c903f5c (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:5c1e82c76da40ba9d65964a91cfa13b903256dfe59a42c5580d7864598851391, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+2026-01-03T17:35:28.641283636Z container die 484df0982ac54ee5e8b244cc443d54c90fa1760707298df9cded726a5c903f5c (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:5c1e82c76da40ba9d65964a91cfa13b903256dfe59a42c5580d7864598851391, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, execDuration=543, exitCode=0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+2026-01-03T17:35:28.648800873Z container destroy 484df0982ac54ee5e8b244cc443d54c90fa1760707298df9cded726a5c903f5c (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:5c1e82c76da40ba9d65964a91cfa13b903256dfe59a42c5580d7864598851391, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+2026-01-03T17:35:38.087651520Z container kill c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280 (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:d4c5187cceeaf8ce5d5a426c58dd6c859ad1ec3efb563d9bfee2b482981a1e48, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1, signal=9)
+2026-01-03T17:35:38.471124519Z network disconnect 5151c6d9a5024d37eb18635b1b6a112f734600ade2c9763e65d3f172b4673e44 (container=c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280, name=current_default, type=bridge)
+2026-01-03T17:35:38.477626709Z container stop c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280 (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:d4c5187cceeaf8ce5d5a426c58dd6c859ad1ec3efb563d9bfee2b482981a1e48, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:35:38.482231167Z container die c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280 (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:d4c5187cceeaf8ce5d5a426c58dd6c859ad1ec3efb563d9bfee2b482981a1e48, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, execDuration=552, exitCode=137, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:35:38.490518052Z container destroy c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280 (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:d4c5187cceeaf8ce5d5a426c58dd6c859ad1ec3efb563d9bfee2b482981a1e48, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:35:38.503956179Z image untag sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb (name=sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb)
+2026-01-03T17:35:38.511049549Z image untag sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5 (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5)
+2026-01-03T17:35:38.513263258Z image untag sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5 (name=sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5)
+2026-01-03T17:35:38.922909054Z network destroy 5151c6d9a5024d37eb18635b1b6a112f734600ade2c9763e65d3f172b4673e44 (name=current_default, type=bridge)
+2026-01-03T17:35:39.057676626Z image delete sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb (name=sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb)
+2026-01-03T17:35:39.112218219Z image delete sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5 (name=sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5)
+2026-01-03T17:35:39.202699407Z image delete sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5 (name=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5)
+2026-01-03T17:35:46.651287726Z image pull ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest (name=ghcr.io/aaditya-kumar-singh/schemaflow-frontend)
+2026-01-03T17:35:48.728983357Z image pull nginx:alpine (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=nginx)
+2026-01-03T17:36:05.818134972Z image pull ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest (name=ghcr.io/aaditya-kumar-singh/schemaflow-backend)
+2026-01-03T17:36:06.088353564Z network create 41c58cb417004103c0243d73b6b9c974bae8623f4d8bbb77a4d9a84e864870c3 (name=current_default, type=bridge)
+2026-01-03T17:36:06.381047280Z container create 41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+2026-01-03T17:36:06.383293941Z container create eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:36:06.438141907Z container create 1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=frontend:service_started:false,backend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:36:06.547296122Z network connect 41c58cb417004103c0243d73b6b9c974bae8623f4d8bbb77a4d9a84e864870c3 (container=eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d, name=current_default, type=bridge)
+2026-01-03T17:36:06.574837359Z network connect 41c58cb417004103c0243d73b6b9c974bae8623f4d8bbb77a4d9a84e864870c3 (container=41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b, name=current_default, type=bridge)
+2026-01-03T17:36:07.444274041Z container start eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:36:07.452734628Z container start 41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+2026-01-03T17:36:07.512463358Z network connect 41c58cb417004103c0243d73b6b9c974bae8623f4d8bbb77a4d9a84e864870c3 (container=1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0, name=current_default, type=bridge)
+2026-01-03T17:36:07.927854194Z container start 1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=frontend:service_started:false,backend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:36:09.526858091Z image untag sha256:d4c5187cceeaf8ce5d5a426c58dd6c859ad1ec3efb563d9bfee2b482981a1e48 (name=sha256:d4c5187cceeaf8ce5d5a426c58dd6c859ad1ec3efb563d9bfee2b482981a1e48)
+2026-01-03T17:36:11.076501843Z image delete sha256:d4c5187cceeaf8ce5d5a426c58dd6c859ad1ec3efb563d9bfee2b482981a1e48 (name=sha256:d4c5187cceeaf8ce5d5a426c58dd6c859ad1ec3efb563d9bfee2b482981a1e48)
+2026-01-03T17:36:11.152493835Z image untag sha256:5c1e82c76da40ba9d65964a91cfa13b903256dfe59a42c5580d7864598851391 (name=sha256:5c1e82c76da40ba9d65964a91cfa13b903256dfe59a42c5580d7864598851391)
+2026-01-03T17:36:11.258853748Z image delete sha256:5c1e82c76da40ba9d65964a91cfa13b903256dfe59a42c5580d7864598851391 (name=sha256:5c1e82c76da40ba9d65964a91cfa13b903256dfe59a42c5580d7864598851391)
+2026-01-03T17:44:06.895040434Z container prune  (reclaimed=0)
+2026-01-03T17:44:09.159549359Z image pull nginx:alpine (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=nginx)
+2026-01-03T17:44:14.571591340Z image pull ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest (name=ghcr.io/aaditya-kumar-singh/schemaflow-frontend)
+2026-01-03T17:44:32.382066075Z image pull ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest (name=ghcr.io/aaditya-kumar-singh/schemaflow-backend)
+2026-01-03T17:44:36.463909881Z container kill 1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=frontend:service_started:false,backend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1, signal=3)
+2026-01-03T17:44:37.165809550Z network disconnect 41c58cb417004103c0243d73b6b9c974bae8623f4d8bbb77a4d9a84e864870c3 (container=1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0, name=current_default, type=bridge)
+2026-01-03T17:44:37.226893206Z container stop 1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=frontend:service_started:false,backend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:44:37.233303707Z container die 1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=frontend:service_started:false,backend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, execDuration=508, exitCode=0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:44:37.248250523Z container destroy 1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=frontend:service_started:false,backend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:44:37.268807686Z container kill 41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1, signal=15)
+2026-01-03T17:44:37.269742501Z container kill eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1, signal=15)
+2026-01-03T17:44:37.890277717Z network disconnect 41c58cb417004103c0243d73b6b9c974bae8623f4d8bbb77a4d9a84e864870c3 (container=41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b, name=current_default, type=bridge)
+2026-01-03T17:44:37.896538657Z container stop 41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+2026-01-03T17:44:37.900988099Z container die 41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, execDuration=510, exitCode=0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+2026-01-03T17:44:37.908816371Z container destroy 41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+2026-01-03T17:44:47.287837594Z container kill eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1, signal=9)
+2026-01-03T17:44:47.651047619Z network disconnect 41c58cb417004103c0243d73b6b9c974bae8623f4d8bbb77a4d9a84e864870c3 (container=eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d, name=current_default, type=bridge)
+2026-01-03T17:44:47.658642095Z container stop eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:44:47.663538749Z container die eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, execDuration=519, exitCode=137, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:44:47.670901968Z container destroy eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:44:47.683824723Z image untag sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5 (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5)
+2026-01-03T17:44:47.689733158Z image untag sha256:e790fef852764bc847e97727a4fb4347265d78afadb199b994622c2bd5406d7a (name=sha256:e790fef852764bc847e97727a4fb4347265d78afadb199b994622c2bd5406d7a)
+2026-01-03T17:44:47.694494732Z image untag sha256:43ab1f3b0f7da4770a4e1699d1b5345e7278258305a29492aafa0764e08b71e4 (name=sha256:43ab1f3b0f7da4770a4e1699d1b5345e7278258305a29492aafa0764e08b71e4)
+2026-01-03T17:44:47.810156002Z image delete sha256:43ab1f3b0f7da4770a4e1699d1b5345e7278258305a29492aafa0764e08b71e4 (name=sha256:43ab1f3b0f7da4770a4e1699d1b5345e7278258305a29492aafa0764e08b71e4)
+2026-01-03T17:44:47.904433306Z image delete sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5 (name=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5)
+2026-01-03T17:44:48.056686830Z network destroy 41c58cb417004103c0243d73b6b9c974bae8623f4d8bbb77a4d9a84e864870c3 (name=current_default, type=bridge)
+2026-01-03T17:44:48.447982022Z image delete sha256:e790fef852764bc847e97727a4fb4347265d78afadb199b994622c2bd5406d7a (name=sha256:e790fef852764bc847e97727a4fb4347265d78afadb199b994622c2bd5406d7a)
+2026-01-03T17:44:57.428526450Z image pull nginx:alpine (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=nginx)
+2026-01-03T17:44:59.780894539Z image pull ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest (name=ghcr.io/aaditya-kumar-singh/schemaflow-frontend)
+2026-01-03T17:45:06.960043908Z image pull ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest (name=ghcr.io/aaditya-kumar-singh/schemaflow-backend)
+2026-01-03T17:45:07.247069647Z network create 15d5e62a42c6a802835e8e581ddea7c82f5bfa7049d4b6ca939d50027fcde9c6 (name=current_default, type=bridge)
+2026-01-03T17:45:07.476406596Z container create 82c649ed28e381699529c219271b5f1faf9a54a9a3931574d574f551467587a8 (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:43ab1f3b0f7da4770a4e1699d1b5345e7278258305a29492aafa0764e08b71e4, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+2026-01-03T17:45:07.479166343Z container create 6a3c5b7d526c964d987ad7d0de9b6f6836673c733d4f4c596c60c1de60669db4 (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:e790fef852764bc847e97727a4fb4347265d78afadb199b994622c2bd5406d7a, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:45:07.508147278Z container create b36a113e73eb91c689aa0bf1fa798cdcb76a563b6955d21f9c83af85ce8bebf4 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=backend:service_started:false,frontend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:45:07.651246713Z network connect 15d5e62a42c6a802835e8e581ddea7c82f5bfa7049d4b6ca939d50027fcde9c6 (container=6a3c5b7d526c964d987ad7d0de9b6f6836673c733d4f4c596c60c1de60669db4, name=current_default, type=bridge)
+2026-01-03T17:45:07.676144293Z network connect 15d5e62a42c6a802835e8e581ddea7c82f5bfa7049d4b6ca939d50027fcde9c6 (container=82c649ed28e381699529c219271b5f1faf9a54a9a3931574d574f551467587a8, name=current_default, type=bridge)
+2026-01-03T17:45:08.550133035Z container start 6a3c5b7d526c964d987ad7d0de9b6f6836673c733d4f4c596c60c1de60669db4 (com.docker.compose.config-hash=230774e75ae68ac1b976fde81ec479e52d23fd3ca0699be792ec87f4f8fd7842, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:e790fef852764bc847e97727a4fb4347265d78afadb199b994622c2bd5406d7a, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=backend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+2026-01-03T17:45:08.553126381Z container start 82c649ed28e381699529c219271b5f1faf9a54a9a3931574d574f551467587a8 (com.docker.compose.config-hash=8e82bc1a62fe052726831b3590bf3450e79e36949611f15afdcdc10974948c95, com.docker.compose.container-number=1, com.docker.compose.depends_on=, com.docker.compose.image=sha256:43ab1f3b0f7da4770a4e1699d1b5345e7278258305a29492aafa0764e08b71e4, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=frontend, com.docker.compose.version=5.0.0, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+2026-01-03T17:45:08.609764652Z network connect 15d5e62a42c6a802835e8e581ddea7c82f5bfa7049d4b6ca939d50027fcde9c6 (container=b36a113e73eb91c689aa0bf1fa798cdcb76a563b6955d21f9c83af85ce8bebf4, name=current_default, type=bridge)
+2026-01-03T17:45:09.053802732Z container start b36a113e73eb91c689aa0bf1fa798cdcb76a563b6955d21f9c83af85ce8bebf4 (com.docker.compose.config-hash=a5d8174062d75acffa3df5369b3e5d6b37eb3b48f554d35d276d211b39d23c80, com.docker.compose.container-number=1, com.docker.compose.depends_on=backend:service_started:false,frontend:service_started:false, com.docker.compose.image=sha256:04da2b0513cd78d8d29d60575cef80813c5496c15a801921e47efdf0feba39e5, com.docker.compose.oneoff=False, com.docker.compose.project=current, com.docker.compose.project.config_files=/var/app/current/docker-compose.yml, com.docker.compose.project.working_dir=/var/app/current, com.docker.compose.service=proxy, com.docker.compose.version=5.0.0, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+2026-01-03T17:45:10.402008438Z image untag sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb (name=sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb)
+2026-01-03T17:45:11.826964522Z image delete sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb (name=sha256:f31b57e6f04aefe90f191f3c79f313313e95e7694811cdb17726bfda14201cdb)
+2026-01-03T17:45:11.891264015Z image untag sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5 (name=sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5)
+2026-01-03T17:45:12.029078452Z image delete sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5 (name=sha256:0bbf56a80a514792a95ac9a7b87f9f538a992a53765e7c77a855e2f0edcc7ee5)
+
+
+----------------------------------------
+/var/log/docker-compose-events.log
+----------------------------------------
+
+2026-01-03 16:13:22.719892 container start b30ad39d0b12f4bbd4e23b0a1dec3c4e6bc8effa11ffc3cafc2a833c6b5e4ba5 (image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+
+2026-01-03 16:13:23.178886 container start ad565e0e790c6ddd9093dc914baf22226e7983ee2f669323eb09c6f38662a898 (image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+
+
+2026-01-03 16:25:58.908964 container create ce379cf0411410826d01dcd8a1b829cf98a06dd13ba5e5007f81f63cf0e99c18 (image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+
+2026-01-03 16:25:58.910488 container create 48d2d142689ab6aeae2bdee2210d4774a9ff33793e336c91bd3495e116eb842f (image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+
+2026-01-03 16:25:58.949808 container create 261e315d55bd404812c0cbc1700d1b05623f990d9d67bedd7f9c0562bd3fde4b (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, image=nginx:alpine, name=current-proxy-1)
+
+2026-01-03 16:25:59.996242 container start 48d2d142689ab6aeae2bdee2210d4774a9ff33793e336c91bd3495e116eb842f (name=current-backend-1, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest)
+
+2026-01-03 16:26:00.015638 container start ce379cf0411410826d01dcd8a1b829cf98a06dd13ba5e5007f81f63cf0e99c18 (name=current-frontend-1, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest)
+
+2026-01-03 16:26:00.857173 container start 261e315d55bd404812c0cbc1700d1b05623f990d9d67bedd7f9c0562bd3fde4b (image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+
+
+2026-01-03 16:36:43.987626 container create d2c9cbf9839dea8a1f9a35bf8782400597fd669ef9d52966ea09fa7d1e6cd81c (name=current-frontend-1, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest)
+
+2026-01-03 16:36:43.988701 container create 686eb19bb5919f2c54e705d965dc0e42a92871ecd3ff732574d04ee3cb9d7b27 (image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+
+2026-01-03 16:36:44.020625 container create 8b6a12a472f6581ce98caadd8f6601257570c7efdb1b6ff4c902b8aea1dda929 (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, image=nginx:alpine, name=current-proxy-1)
+
+2026-01-03 16:36:45.021995 container start d2c9cbf9839dea8a1f9a35bf8782400597fd669ef9d52966ea09fa7d1e6cd81c (image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+
+2026-01-03 16:36:45.057633 container start 686eb19bb5919f2c54e705d965dc0e42a92871ecd3ff732574d04ee3cb9d7b27 (name=current-backend-1, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest)
+
+2026-01-03 16:36:45.480341 container start 8b6a12a472f6581ce98caadd8f6601257570c7efdb1b6ff4c902b8aea1dda929 (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, image=nginx:alpine, name=current-proxy-1)
+
+
+2026-01-03 16:48:44.743307 container create edb9a5b8852452ed4324dea74edb8c209dc8bd97dd96b119816117a4dc8fdaa4 (name=current-backend-1, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest)
+
+2026-01-03 16:48:44.745000 container create aa25036d6ba72c4745d76594d156f3db35339e27398e636a26b06ccdf0b8ac02 (image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+
+2026-01-03 16:48:44.776254 container create 59f99cc0113f51026ebd60bdeb5a46daae0a929117858cd7f5fa235a357dc1ca (image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+
+2026-01-03 16:48:45.762727 container start edb9a5b8852452ed4324dea74edb8c209dc8bd97dd96b119816117a4dc8fdaa4 (image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+
+2026-01-03 16:48:45.818167 container start aa25036d6ba72c4745d76594d156f3db35339e27398e636a26b06ccdf0b8ac02 (image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+
+2026-01-03 16:48:46.230068 container start 59f99cc0113f51026ebd60bdeb5a46daae0a929117858cd7f5fa235a357dc1ca (name=current-proxy-1, image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>)
+
+
+time="2026-01-03T16:59:49Z" level=warning msg="The \"JWT_SECRET\" variable is not set. Defaulting to a blank string."
+2026-01-03 17:00:13.099461 container create 0440723dbd4308cc14463cb6c93fb55ff24fc19e8d562b98c07c0b3fc5dddcb7 (name=current-frontend-1, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest)
+
+2026-01-03 17:00:13.104763 container create dfb7ae8ef0abb8261818bfe514ecba3e99ae918c8c94a2f711ec1d9b6ecf6734 (name=current-backend-1, image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest)
+
+2026-01-03 17:00:13.134770 container create 6ccb313a2b653bcf2d1fdbde655fd3eb3173ee2829e02029d3805bcb508fa6c6 (image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+
+2026-01-03 17:00:14.162775 container start 0440723dbd4308cc14463cb6c93fb55ff24fc19e8d562b98c07c0b3fc5dddcb7 (image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+
+2026-01-03 17:00:14.183542 container start dfb7ae8ef0abb8261818bfe514ecba3e99ae918c8c94a2f711ec1d9b6ecf6734 (image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+
+2026-01-03 17:00:14.537984 container start 6ccb313a2b653bcf2d1fdbde655fd3eb3173ee2829e02029d3805bcb508fa6c6 (image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+
+
+time="2026-01-03T17:26:05Z" level=warning msg="The \"JWT_SECRET\" variable is not set. Defaulting to a blank string."
+2026-01-03 17:26:23.970487 container create 484df0982ac54ee5e8b244cc443d54c90fa1760707298df9cded726a5c903f5c (name=current-frontend-1, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest)
+
+2026-01-03 17:26:23.971899 container create c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280 (image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+
+2026-01-03 17:26:24.007962 container create 110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18 (image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+
+2026-01-03 17:26:25.161105 container start 484df0982ac54ee5e8b244cc443d54c90fa1760707298df9cded726a5c903f5c (image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+
+2026-01-03 17:26:25.164634 container start c70af33f0a9f4fd58fa7bf9fbd67c49ca5deab67ac6559d512262bf745382280 (image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+
+2026-01-03 17:26:25.567891 container start 110d0a8c7a8188f43b9052f525f000c2ead22f2581b201d14197d42b4f50af18 (image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+
+
+time="2026-01-03T17:35:40Z" level=warning msg="The \"JWT_SECRET\" variable is not set. Defaulting to a blank string."
+2026-01-03 17:36:06.381047 container create 41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b (name=current-frontend-1, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest)
+
+2026-01-03 17:36:06.383293 container create eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d (image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+
+2026-01-03 17:36:06.438141 container create 1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0 (image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+
+2026-01-03 17:36:07.444274 container start eadec7f1db0083b6090b47b12db6682a3e0e20bba91d9570efe38a9594ad855d (image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+
+2026-01-03 17:36:07.452734 container start 41ddc31a60abb77b54192cb95d0e25405e407f4b5b70d780238315f3bef6d17b (image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+
+2026-01-03 17:36:07.927854 container start 1f7916235c4ab6b16fbe6e379affdc7a395a22802c583eb30b4c7b053d6aa5d0 (image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+
+
+time="2026-01-03T17:44:49Z" level=warning msg="The \"JWT_SECRET\" variable is not set. Defaulting to a blank string."
+2026-01-03 17:45:07.476406 container create 82c649ed28e381699529c219271b5f1faf9a54a9a3931574d574f551467587a8 (image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest, name=current-frontend-1)
+
+2026-01-03 17:45:07.479166 container create 6a3c5b7d526c964d987ad7d0de9b6f6836673c733d4f4c596c60c1de60669db4 (image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+
+2026-01-03 17:45:07.508147 container create b36a113e73eb91c689aa0bf1fa798cdcb76a563b6955d21f9c83af85ce8bebf4 (maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1, image=nginx:alpine)
+
+2026-01-03 17:45:08.550133 container start 6a3c5b7d526c964d987ad7d0de9b6f6836673c733d4f4c596c60c1de60669db4 (image=ghcr.io/aaditya-kumar-singh/schemaflow-backend:latest, name=current-backend-1)
+
+2026-01-03 17:45:08.553126 container start 82c649ed28e381699529c219271b5f1faf9a54a9a3931574d574f551467587a8 (name=current-frontend-1, image=ghcr.io/aaditya-kumar-singh/schemaflow-frontend:latest)
+
+2026-01-03 17:45:09.053802 container start b36a113e73eb91c689aa0bf1fa798cdcb76a563b6955d21f9c83af85ce8bebf4 (image=nginx:alpine, maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>, name=current-proxy-1)
+
+
