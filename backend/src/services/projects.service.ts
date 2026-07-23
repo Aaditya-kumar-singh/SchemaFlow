@@ -1,4 +1,4 @@
-import { Project, Prisma } from '@prisma/client-postgres';
+import { Project, ProjectCollaborator, Prisma } from '@prisma/client-postgres';
 import { BaseHelper } from '@/common/helpers/base.helper';
 import { postgresPrisma } from '@/common/postgres.service';
 import { mongoPrisma } from '@/common/mongo.service';
@@ -167,18 +167,18 @@ export class ProjectsService extends BaseHelper<Project> {
         const current = await postgresPrisma.project.findUnique({
             where: { id: projectId },
             include: { collaborators: true }
-        }) as any;
+        });
 
         if (!current) throw ApiError.notFound('Project', projectId);
 
         // Optimistic Locking
-        if (expectedVersion !== undefined && (current as any).version !== expectedVersion) {
+        if (expectedVersion !== undefined && current.version !== expectedVersion) {
             throw ApiError.conflict('Version conflict');
         }
 
         // RBAC Check
         if (current.userId !== userId) {
-            const collaborator = current.collaborators?.find((c: any) => c.userId === userId);
+            const collaborator = current.collaborators?.find((c: ProjectCollaborator) => c.userId === userId);
             const isEditor = collaborator && collaborator.role === 'EDITOR';
 
             if (!isEditor) {
