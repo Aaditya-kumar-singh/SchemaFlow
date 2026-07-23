@@ -470,10 +470,12 @@ export const useCanvasStore = create<CanvasState>((set, get) => ({
     },
 
     addField: (nodeId: string) => {
+        const dbType = get().metadata?.dbType || 'MYSQL';
+        const isMongo = dbType === 'MONGODB';
         const newField: Field = {
             id: generateId(),
             name: 'new_field',
-            type: 'VARCHAR',
+            type: isMongo ? 'String' : 'VARCHAR',
             isPrimaryKey: false,
             isForeignKey: false,
             isNullable: true,
