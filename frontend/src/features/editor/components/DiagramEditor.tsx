@@ -25,7 +25,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Plus, FileInput, History, Database, Menu } from 'lucide-react';
+import { Plus, FileInput, History, Database, Menu, Braces, Table2, Layers } from 'lucide-react';
 import VersionHistoryPanel from './dialogs/VersionHistoryPanel';
 import ImportDialog from './ImportDialog';
 
@@ -374,38 +374,74 @@ export default function DiagramEditor({ initialContent, projectId, readOnly = fa
                 )}
             </ReactFlow>
 
-            {/* Editor Toolbar */}
+            {/* ───── DB-type branded toolbar (top-left) ───── */}
             <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
+
+                {/* Primary CTA: Add Table / Add Collection */}
+                <button
+                    onClick={addTable}
+                    className={cn(
+                        'flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold shadow-lg transition-all active:scale-95',
+                        isMongo
+                            ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                            : 'bg-blue-600 hover:bg-blue-700 text-white'
+                    )}
+                    title={isMongo ? 'Add Collection' : 'Add Table'}
+                >
+                    {isMongo
+                        ? <Braces className="w-4 h-4" />
+                        : <Table2 className="w-4 h-4" />}
+                    {isMongo ? 'Add Collection' : 'Add Table'}
+                </button>
+
+                {/* Secondary actions dropdown */}
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="outline" className={cn("shadow-lg backdrop-blur", getButtonStyle())}>
                             <Menu className="w-4 h-4 mr-2" />
-                            Actions
+                            More
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="start" className={cn("w-56 ml-2 mt-1 backdrop-blur-xl shadow-xl", getDropdownStyle())}>
-                        <DropdownMenuLabel>Canvas Actions</DropdownMenuLabel>
+                        <DropdownMenuLabel className={cn(
+                            'text-xs font-bold uppercase tracking-wide',
+                            isMongo ? 'text-emerald-600' : 'text-blue-600'
+                        )}>
+                            {isMongo ? 'MongoDB Actions' : 'MySQL Actions'}
+                        </DropdownMenuLabel>
                         <DropdownMenuSeparator className={metadata?.theme === 'dark' ? "bg-slate-700" : ""} />
-                        <DropdownMenuItem onClick={addTable} className={cn("cursor-pointer", getItemHoverStyle())}>
-                            <Plus className="w-4 h-4 mr-2 text-blue-500" />
-                            {isMongo ? 'Add Collection' : 'Add Table'}
-                        </DropdownMenuItem>
                         <DropdownMenuItem onClick={() => setSchemaInboxOpen(true)} className={cn("cursor-pointer", getItemHoverStyle())}>
-                            <FileInput className="w-4 h-4 mr-2 text-purple-500" />
-                            Import Schema
+                            <FileInput className={cn('w-4 h-4 mr-2', isMongo ? 'text-emerald-500' : 'text-purple-500')} />
+                            {isMongo ? 'Import Mongoose Schema' : 'Import SQL Schema'}
                         </DropdownMenuItem>
                         <DropdownMenuItem onClick={() => setImportDialogOpen(true)} className={cn("cursor-pointer", getItemHoverStyle())}>
-                            <Database className="w-4 h-4 mr-2 text-green-500" />
-                            Connect DB
+                            <Database className={cn('w-4 h-4 mr-2', isMongo ? 'text-emerald-500' : 'text-green-500')} />
+                            {isMongo ? 'Connect MongoDB' : 'Connect MySQL DB'}
                         </DropdownMenuItem>
                         <DropdownMenuSeparator className={metadata?.theme === 'dark' ? "bg-slate-700" : ""} />
                         <DropdownMenuItem onClick={() => setHistoryOpen(true)} className={cn("cursor-pointer", getItemHoverStyle())}>
                             <History className="w-4 h-4 mr-2 text-orange-500" />
-                            History
+                            Version History
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
+
+            {/* ───── Canvas-mode badge (top-right) ───── */}
+            <div className="absolute top-4 right-4 z-10 pointer-events-none">
+                <div className={cn(
+                    'flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border shadow-md backdrop-blur-sm',
+                    isMongo
+                        ? 'bg-emerald-50/90 border-emerald-200 text-emerald-800'
+                        : 'bg-blue-50/90 border-blue-200 text-blue-800'
+                )}>
+                    {isMongo
+                        ? <Braces className="w-3.5 h-3.5 text-emerald-600" />
+                        : <Layers className="w-3.5 h-3.5 text-blue-600" />}
+                    {isMongo ? 'MongoDB Canvas' : 'MySQL Canvas'}
+                </div>
+            </div>
+
 
             <div className="absolute bottom-4 left-4 z-10 text-xs text-gray-400 pointer-events-none">
                 <p>Ctrl+Z to Undo • Ctrl+Y to Redo • Click edge to edit relationship</p>

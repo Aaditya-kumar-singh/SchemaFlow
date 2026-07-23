@@ -234,11 +234,16 @@ export default function PropertiesPanel() {
                         <Button
                             size="sm"
                             variant="outline"
-                            className={cn("h-6 text-xs transition-colors", styles.button, styles.card)}
+                            className={cn(
+                                "h-6 text-xs transition-colors border font-semibold",
+                                isMongo
+                                    ? "border-emerald-300 text-emerald-700 hover:bg-emerald-50"
+                                    : "border-blue-300 text-blue-700 hover:bg-blue-50"
+                            )}
                             onClick={() => addField(selectedNodeId!)}
                         >
                             <Plus className="w-3 h-3 mr-1" />
-                            Add
+                            {isMongo ? 'Add Field' : 'Add Column'}
                         </Button>
                     </div>
 
@@ -306,7 +311,21 @@ export default function PropertiesPanel() {
                                         </select>
 
                                         <div className="flex gap-1">
-                                            {!isMongo && (
+                                            {isMongo ? (
+                                                /* ── MongoDB: show Required toggle only ── */
+                                                <button
+                                                    title={field.isNullable ? 'Optional field' : 'Required field'}
+                                                    className={`px-1.5 py-0.5 rounded text-[10px] font-bold transition-colors ${
+                                                        !field.isNullable
+                                                            ? 'bg-emerald-100 text-emerald-700'
+                                                            : (metadata?.theme === 'dark' ? 'text-slate-600 hover:bg-slate-700' : 'text-gray-300 hover:bg-gray-200')
+                                                    }`}
+                                                    onClick={() => handleAtomicUpdate(() => updateField(selectedNodeId!, field.id, { isNullable: !field.isNullable }))}
+                                                >
+                                                    {!field.isNullable ? 'REQ' : 'OPT'}
+                                                </button>
+                                            ) : (
+                                                /* ── MySQL: PK / FK / Nullable ── */
                                                 <>
                                                     <button
                                                         title="Primary Key"
@@ -322,15 +341,15 @@ export default function PropertiesPanel() {
                                                     >
                                                         <span className="text-[10px] font-bold">FK</span>
                                                     </button>
+                                                    <button
+                                                        title="Nullable"
+                                                        className={`p-1 rounded ${field.isNullable ? 'bg-purple-100 text-purple-600' : (metadata?.theme === 'dark' ? 'text-slate-600 hover:bg-slate-700' : 'text-gray-300 hover:bg-gray-200')}`}
+                                                        onClick={() => handleAtomicUpdate(() => updateField(selectedNodeId!, field.id, { isNullable: !field.isNullable }))}
+                                                    >
+                                                        <span className="text-[10px] font-bold">?</span>
+                                                    </button>
                                                 </>
                                             )}
-                                            <button
-                                                title={isMongo ? "Optional" : "Nullable"}
-                                                className={`p-1 rounded ${field.isNullable ? 'bg-purple-100 text-purple-600' : (metadata?.theme === 'dark' ? 'text-slate-600 hover:bg-slate-700' : 'text-gray-300 hover:bg-gray-200')}`}
-                                                onClick={() => handleAtomicUpdate(() => updateField(selectedNodeId!, field.id, { isNullable: !field.isNullable }))}
-                                            >
-                                                <span className="text-[10px] font-bold">?</span>
-                                            </button>
                                         </div>
                                     </div>
                                 </div>

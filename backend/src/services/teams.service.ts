@@ -1,6 +1,6 @@
 import { mongoPrisma } from '@/common/mongo.service';
 import { ApiError } from '@/common/errors/api.error';
-import { TeamRole } from '@prisma/client-mongo';
+import { TeamRole, TeamToken } from '@prisma/client-mongo';
 
 export class TeamsService {
 
@@ -35,8 +35,8 @@ export class TeamsService {
 
         // Enrich with member count maybe?
         return tokens
-            .filter(token => token.team !== null) // Filter out broken relationships
-            .map(token => ({
+            .filter((token: TeamToken & { team: { id: string; name: string } | null }) => token.team !== null)
+            .map((token: TeamToken & { team: { id: string; name: string } | null }) => ({
                 ...token.team!,
                 role: token.role
             }));
@@ -58,7 +58,7 @@ export class TeamsService {
             }
         });
 
-        return members.map(m => ({
+        return members.map((m: TeamToken & { user: { id: string; name: string | null; email: string } | null }) => ({
             id: m.userId,
             name: m.user?.name || 'Unknown',
             email: m.user?.email || 'No Email',

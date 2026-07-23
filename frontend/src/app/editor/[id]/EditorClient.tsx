@@ -7,7 +7,7 @@ import { projectsApi, Project } from '@/features/projects/api/projectsApi';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { useCanvasStore } from '@/features/editor/stores/canvasStore';
-import { Loader2, Download, Database, Code, Search, Users, Home } from 'lucide-react';
+import { Loader2, Download, Database, Code, Search, Users, Home, Braces, Table2 } from 'lucide-react';
 import MobileMenu from '@/features/editor/components/MobileMenu';
 import { useTeamStore } from '@/features/teams/stores/teamStore';
 import { cn } from '@/lib/utils/cn';
@@ -195,6 +195,17 @@ export default function EditorClient() {
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src="/logo.png" alt="Logo" className="w-5 h-5 rounded-md" />
                             <span className={cn("font-medium transition-colors", styles.text)}>{project?.name}</span>
+                            <span className={cn(
+                                "inline-flex items-center gap-1 text-[10px] font-bold uppercase px-1.5 py-0.5 rounded-full ml-1",
+                                project?.type === 'MONGODB'
+                                    ? 'bg-emerald-100 text-emerald-700'
+                                    : 'bg-blue-100 text-blue-700'
+                            )}>
+                                {project?.type === 'MONGODB'
+                                    ? <Braces className="w-3 h-3" />
+                                    : <Table2 className="w-3 h-3" />}
+                                {project?.type}
+                            </span>
                         </div>
                         <span className={styles.subText}>/</span>
                         <span className={cn("font-semibold text-sm uppercase", styles.subText)}>Editor</span>
@@ -238,7 +249,7 @@ export default function EditorClient() {
 
                     <Button variant="outline" size="sm" onClick={() => setCodePreviewOpen(!codePreviewOpen)} className={cn("mr-2 transition-colors", styles.button)}>
                         <Code className={cn("w-4 h-4 mr-2", styles.icon)} />
-                        Code
+                        {project?.type === 'MONGODB' ? 'Mongoose' : 'SQL'}
                     </Button>
                     <Button variant="outline" size="sm" onClick={() => setImportOpen(true)} className={cn("mr-2 transition-colors", styles.button)}>
                         <Database className={cn("w-4 h-4 mr-2", styles.icon)} />
@@ -246,7 +257,7 @@ export default function EditorClient() {
                     </Button>
                     <Button variant="outline" size="sm" onClick={handleExport} className={cn("mr-2 transition-colors", styles.button)}>
                         <Download className={cn("w-4 h-4 mr-2", styles.icon)} />
-                        Export
+                        {project?.type === 'MONGODB' ? 'Mongoose Schema' : 'SQL Script'}
                     </Button>
 
                     <Button variant="outline" size="sm" onClick={() => setShareOpen(true)} className={cn("mr-2 transition-colors", styles.button)}>
