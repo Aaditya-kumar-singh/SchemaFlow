@@ -19,7 +19,7 @@ export default function PricingPage() {
             {/* Navbar (Simplified for subpage) */}
             <nav className="fixed top-0 w-full z-50 border-b border-slate-200/50 bg-white/80 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-2 group">
+                    <Link id="price-link-back-home" href="/" className="flex items-center gap-2 group">
                         <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
                             <ArrowLeft className="w-4 h-4 text-slate-600" />
                         </div>
@@ -27,10 +27,10 @@ export default function PricingPage() {
                     </Link>
                     <div className="flex items-center gap-6">
                         <div className="flex items-center gap-3">
-                            <Link href="/login" className="text-sm font-medium text-slate-600 hover:text-slate-900">
+                            <Link id="price-link-login" href="/login" className="text-sm font-medium text-slate-600 hover:text-slate-900">
                                 Log in
                             </Link>
-                            <Button onClick={() => router.push('/register')} size="sm" className="bg-slate-900 text-white hover:bg-slate-800 shadow-xl shadow-slate-900/10">
+                            <Button id="price-btn-get-started-nav" onClick={() => router.push('/register')} size="sm" className="bg-slate-900 text-white hover:bg-slate-800 shadow-xl shadow-slate-900/10">
                                 Get Started
                             </Button>
                         </div>
@@ -56,7 +56,7 @@ export default function PricingPage() {
                                 <span className="text-slate-500">/month</span>
                             </div>
                             <p className="text-slate-600 text-sm mb-6">Perfect for side projects and learning.</p>
-                            <Button variant="outline" size="lg" className="w-full mb-8" onClick={() => router.push('/register')}>Get Started</Button>
+                            <Button id="price-btn-hobby-start" variant="outline" size="lg" className="w-full mb-8" onClick={() => router.push('/register')}>Get Started</Button>
                             <ul className="space-y-4 text-sm text-slate-600">
                                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-green-500" /> 3 Projects</li>
                                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-green-500" /> Community Support</li>
@@ -73,7 +73,7 @@ export default function PricingPage() {
                                 <span className="text-slate-400">/month</span>
                             </div>
                             <p className="text-slate-400 text-sm mb-6">For professional developers and small teams.</p>
-                            <Button size="lg" className="w-full mb-8 bg-blue-600 hover:bg-blue-500 text-white border-0" onClick={() => router.push('/register')}>Upgrade to Pro</Button>
+                            <Button id="price-btn-pro-upgrade" size="lg" className="w-full mb-8 bg-blue-600 hover:bg-blue-500 text-white border-0" onClick={() => router.push('/register')}>Upgrade to Pro</Button>
                             <div className="border-t border-slate-800 my-4"></div>
                             <ul className="space-y-4 text-sm text-slate-300 flex-1">
                                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-blue-400" /> Unlimited Projects</li>
@@ -90,7 +90,7 @@ export default function PricingPage() {
                                 <span className="text-4xl font-bold text-slate-900">Custom</span>
                             </div>
                             <p className="text-slate-600 text-sm mb-6">For large organizations requiring security.</p>
-                            <Button variant="outline" size="lg" className="w-full mb-8" onClick={() => window.location.href = 'mailto:sales@schemaflow.com'}>Contact Sales</Button>
+                            <Button id="price-btn-enterprise-contact" variant="outline" size="lg" className="w-full mb-8" onClick={() => window.location.href = 'mailto:sales@schemaflow.com'}>Contact Sales</Button>
                             <ul className="space-y-4 text-sm text-slate-600">
                                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-green-500" /> SSO & SAML</li>
                                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-green-500" /> Dedicated Success Manager</li>
