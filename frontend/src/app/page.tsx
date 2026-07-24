@@ -59,17 +59,17 @@ export default function LandingPage() {
           </div>
           <div className="flex items-center gap-6">
             <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-              <a href="#features" className="hover:text-blue-600 transition-colors">Features</a>
-              <a href="#testimonials" className="hover:text-blue-600 transition-colors">Testimonials</a>
-              <Link href="/price" className="hover:text-blue-600 transition-colors">Pricing</Link>
+              <a id="nav-link-features" href="#features" className="hover:text-blue-600 transition-colors">Features</a>
+              <a id="nav-link-testimonials" href="#testimonials" className="hover:text-blue-600 transition-colors">Testimonials</a>
+              <Link id="nav-link-pricing" href="/price" className="hover:text-blue-600 transition-colors">Pricing</Link>
             </div>
             <div className="h-6 w-px bg-slate-200 hidden md:block"></div>
             <div className="flex items-center gap-3">
-              <Link href="/login" className="text-sm font-medium text-slate-600 hover:text-slate-900">
+              <Link id="nav-link-login" href="/login" className="text-sm font-medium text-slate-600 hover:text-slate-900">
                 Log in
               </Link>
               <Link href="/register">
-                <Button size="sm" className="bg-slate-900 text-white hover:bg-slate-800 shadow-xl shadow-slate-900/10">
+                <Button id="nav-btn-get-started" size="sm" className="bg-slate-900 text-white hover:bg-slate-800 shadow-xl shadow-slate-900/10">
                   Get Started
                 </Button>
               </Link>
@@ -105,7 +105,7 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 animate-slide-up [animation-delay:0.2s]">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button size="lg" className="h-14 px-8 text-lg rounded-full shadow-2xl shadow-blue-600/30 bg-blue-600 hover:bg-blue-500 text-white hover:scale-105 transition-all duration-300 w-full sm:w-auto flex items-center gap-2">
+                <Button id="hero-btn-try-editor" size="lg" className="h-14 px-8 text-lg rounded-full shadow-2xl shadow-blue-600/30 bg-blue-600 hover:bg-blue-500 text-white hover:scale-105 transition-all duration-300 w-full sm:w-auto flex items-center gap-2">
                   <Zap className="w-5 h-5 fill-current" />
                   Try Editor
                   <ChevronDown className="w-4 h-4 opacity-70" />
@@ -114,7 +114,7 @@ export default function LandingPage() {
               <DropdownMenuContent align="center" className="w-56 p-2 bg-white/95 backdrop-blur-xl border-slate-200/60 shadow-xl rounded-xl">
                 <DropdownMenuLabel className="text-xs text-slate-500 uppercase tracking-wider font-semibold px-2 pb-2">Select Database Type</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => router.push('/editor/local?type=MYSQL')} className="cursor-pointer py-3 px-3 rounded-lg focus:bg-blue-50 focus:text-blue-700">
+                <DropdownMenuItem id="hero-dropdown-item-mysql" onClick={() => router.push('/editor/local?type=MYSQL')} className="cursor-pointer py-3 px-3 rounded-lg focus:bg-blue-50 focus:text-blue-700">
                   <div className="flex flex-col gap-1">
                     <span className="font-semibold flex items-center gap-2">
                       <Database className="w-4 h-4 text-blue-500" /> Relational
@@ -122,7 +122,7 @@ export default function LandingPage() {
                     <span className="text-xs text-slate-500">SQL, Postgres, MySQL</span>
                   </div>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push('/editor/local?type=MONGODB')} className="cursor-pointer py-3 px-3 rounded-lg focus:bg-green-50 focus:text-green-700 mt-1">
+                <DropdownMenuItem id="hero-dropdown-item-mongodb" onClick={() => router.push('/editor/local?type=MONGODB')} className="cursor-pointer py-3 px-3 rounded-lg focus:bg-green-50 focus:text-green-700 mt-1">
                   <div className="flex flex-col gap-1">
                     <span className="font-semibold flex items-center gap-2">
                       <span className="w-4 h-4 rounded text-xs border border-green-500 text-green-600 flex items-center justify-center font-bold">M</span> Document
@@ -133,7 +133,7 @@ export default function LandingPage() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button onClick={() => router.push('/register')} variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all w-full sm:w-auto bg-white/50 backdrop-blur-sm text-slate-700">
+            <Button id="hero-btn-signup-free" onClick={() => router.push('/register')} variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all w-full sm:w-auto bg-white/50 backdrop-blur-sm text-slate-700">
               <Github className="mr-2 w-5 h-5" />
               Sign Up Free
             </Button>
